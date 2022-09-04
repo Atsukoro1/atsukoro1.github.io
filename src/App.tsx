@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ProgressLine from "./components/ProgressLine";
+import Navbar from "./components/Navbar";
+import { useEffect, useState } from "react";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ProgressLine/>
+      <Navbar></Navbar>
+
+      <h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1><h1 className="text-2xl text-white">fdfd</h1>
     </div>
   );
 }
