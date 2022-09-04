@@ -1,7 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
 import DarkModeButton from "./DarkModeButton"
-import { motion } from "framer-motion"
 
 const Navbar = () => {
   return (
@@ -19,50 +16,6 @@ const Navbar = () => {
           </div>
           <div className="fixed right-0 flex items-center mr-8">
             <DarkModeButton/>
-
-            <motion.div 
-              className="ml-5"
-              initial={{ scale: 0, rotate: 180 }}
-              animate={{ rotate: 0, scale: 1 }}
-              transition={{ 
-                duration: 2.5,
-                type: "spring", 
-                stiffness: 260,
-                damping: 20
-              }}
-            >
-              <FontAwesomeIcon
-                href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/"
-                icon={faLinkedin}
-                size="2x"
-                className={
-                  `text-blue-600 ml-3 hover:cursor-pointer hover:text-white
-                  transition ease-in-out duration-200`
-                }
-              />
-            </motion.div>
-
-            <motion.div
-              className="ml-1"
-              initial={{ scale: 0, rotate: 180 }}
-              animate={{ rotate: 0, scale: 1 }}
-              transition={{ 
-                duration: 2.5,
-                type: "spring", 
-                stiffness: 260,
-                damping: 20
-              }}
-            >
-              <FontAwesomeIcon 
-                href="https://github.com/Atsukoro1"
-                icon={faGithub}
-                size="2x"
-                className={
-                  `text-blue-600 ml-3 hover:cursor-pointer hover:text-white
-                  transition ease-in-out duration-200`
-                }
-              />
-            </motion.div>
           </div>
         </div>
       </div>
