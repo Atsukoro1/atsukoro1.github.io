@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll } from "framer-motion"
 
 const ProgressLine = () => {
     const { scrollYProgress } = useScroll()
@@ -6,12 +6,11 @@ const ProgressLine = () => {
     return (
         <motion.div
             className={
-                `top-0 left-0 fixed bg-blue-600 shadow-2xl 
-                shadow-blue-500/50 h-1`
+                `top-0 left-0 right-0 fixed bg-blue-600 h-1`
             }
             style={{
-                width: "100%",
-                scaleX: scrollYProgress
+                scaleX: scrollYProgress,
+                transformOrigin: "0%"
             }}
         >
         </motion.div>

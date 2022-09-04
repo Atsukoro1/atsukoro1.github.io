@@ -1,6 +1,6 @@
 import ProgressLine from "./components/ProgressLine";
+import Pointer from "./components/Pointer";
 import Navbar from "./components/Navbar";
-import { useEffect, useState } from "react";
 
 function App() {
   return (
@@ -9,6 +9,13 @@ function App() {
         <ProgressLine/>
         <Navbar></Navbar>
       </div>
+
+      {/* Main content */}
+      <div className="ml-auto mr-auto w-[1000px] bg-white mt-20">
+        <div style={{ height: "2900px", width: "20px" }}>fd</div>
+      </div>
+
+      <Pointer/>
     </div>
   );
 }
