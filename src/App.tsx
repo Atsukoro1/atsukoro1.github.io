@@ -5,7 +5,7 @@ import Socials from "./components/Socials";
 import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
-import { faCss3, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { faC } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
@@ -47,16 +47,18 @@ function App() {
         </button>
       </motion.div>
 
-      <div className="mt-[150px] text-center">
-        <h1 className="font-roboto text-blue-600 text-[35px]">My projects</h1>
-        <p className="mt-5 text-gray-400 text-2xl table w-[500px] mr-auto ml-auto">
+      <div className="mt-[150px] mr-auto ml-auto w-[800px]">
+        <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 My projects</h1>
+        <p className="mt-3 text-gray-400 text-xl table w-[500px]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
+      </div>
 
+      <div className="mt-[50px] mr-auto ml-auto w-[800px] grid grid-cols-2">
         <Project
           name="Portfolio"
-          description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+          description="Simple portofolio made using React, Node.js, Typescript, TailwindCSS and Framer motion. This project is used as my main website."
           technologies={[
             {
               name: "React",
@@ -71,24 +73,22 @@ function App() {
               icon: faCss3
             }
           ]}
-          imagePath=""
         />
 
         <Project
           name="Netscrape"
-          description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+          description="TCP traffic sniffer, displaying packets in human-readable format, I will do a remake of this in rust with GUI soon."
           technologies={[
             {
               name: "C",
               icon: faC
             }
           ]}
-          imagePath=""
         />
 
         <Project
           name="Contalk"
-          description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+          description="Messenger-like application, simple chan using websockets (socket.io) and frontend using react."
           technologies={[
             {
               name: "Node.js",
@@ -97,6 +97,21 @@ function App() {
             {
               name: "React",
               icon: faReact
+            }
+          ]}
+        />
+
+        <Project
+          name="Viceverse"
+          description="Website for our company, made with Vue and tailwind."
+          technologies={[
+            {
+              name: "VueJS",
+              icon: faVuejs
+            },
+            {
+              name: "Tailwind",
+              icon: faCss3
             }
           ]}
         />
