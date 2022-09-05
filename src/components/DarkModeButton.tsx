@@ -1,10 +1,35 @@
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Switch } from "@headlessui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DarkModeButton = () => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
+
+    // TODO: Fix
+    useEffect(() => {
+        const theme: string | null = localStorage.getItem("theme");
+
+        setDarkMode(
+            !theme || theme === "dark"
+                ? true
+                : false
+        );
+
+        if(!theme || theme === "dark") {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("theme", "dark");
+        };
+    }, []);
+
+    useEffect(() => {
+        if(localStorage.getItem("theme") === "dark") {
+            localStorage.setItem("theme", "light");
+        } else {
+            document.documentElement.classList.add('dark')
+            localStorage.setItem("theme", "dark");
+        }
+    }, [darkMode]);
 
     return (
         <Switch

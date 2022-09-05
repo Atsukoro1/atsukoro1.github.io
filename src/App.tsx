@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 
 import ProgressLine from "./components/ProgressLine";
 import Socials from "./components/Socials";
+import Project from "./components/Project";
 import Navbar from "./components/Navbar";
+
+import { faCss3, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons";
+import { faC } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   return (
@@ -42,6 +46,62 @@ function App() {
           <span>Download my CV</span>
         </button>
       </motion.div>
+
+      <div className="mt-[150px] text-center">
+        <h1 className="font-roboto text-blue-600 text-[35px]">My projects</h1>
+        <p className="mt-5 text-gray-400 text-2xl table w-[500px] mr-auto ml-auto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </p>
+
+        <Project
+          name="Portfolio"
+          description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum "
+          technologies={[
+            {
+              name: "React",
+              icon: faReact
+            },
+            {
+              name: "Node.js",
+              icon: faNodeJs
+            }, 
+            {
+              name: "Tailwind",
+              icon: faCss3
+            }
+          ]}
+          imagePath=""
+        />
+
+        <Project
+          name="Netscrape"
+          description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+          technologies={[
+            {
+              name: "C",
+              icon: faC
+            }
+          ]}
+          imagePath=""
+        />
+
+        <Project
+          name="Contalk"
+          description="lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+          technologies={[
+            {
+              name: "Node.js",
+              icon: faNodeJs
+            },
+            {
+              name: "React",
+              icon: faReact
+            }
+          ]}
+        />
+      </div>
+      
     </div>
   );
 }
