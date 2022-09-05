@@ -1,7 +1,7 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types/index";
 import { faDiagramNext } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface ITechnology {
     name: string;
@@ -20,8 +20,28 @@ const Project = ({
     description, 
     technologies
 }: IProps) => {
+  const cardVariants: Variants = {
+    offscreen: {
+      x: 150
+    },
+    onscreen: {
+      x: 0,
+      transition: {
+        type: "spring",
+        bounce: 0.7,
+        duration: 1.5
+      }
+    }
+  };
+
   return (
-    <motion.div className="bg-slate-800 h-[300px] w-[370px] p-4 rounded-lg mb-10">
+    <motion.div 
+      className="bg-slate-800 h-[300px] w-[370px] p-4 rounded-lg mb-10"
+      initial="offscreen"
+      whileInView="onscreen"
+      variants={cardVariants}
+      viewport={{ amount: 0.9, once: true }}
+    >
       <FontAwesomeIcon 
         className="text-blue-600 mb-5" 
         icon={faDiagramNext}
@@ -36,12 +56,16 @@ const Project = ({
         { 
           /* Technology badges */
           technologies.map((el: ITechnology, key: number) => {
+
             return (
-              <div className="bg-slate-700 p-1 rounded-full text-center text-slate-300 m-2" key={key}>
+              <motion.div 
+                className="bg-slate-700 p-1 rounded-full text-center text-slate-300 m-2" 
+                key={key}
+              >
                 <FontAwesomeIcon icon={el.icon}/>
                 &nbsp;
                 <label>{ el.name }</label>
-              </div>
+              </motion.div>
             )
           }) 
         }
