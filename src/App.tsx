@@ -1,14 +1,19 @@
 import { motion } from "framer-motion";
 
+import ActivityContent from "./components/ActivityContent";
 import ProgressLine from "./components/ProgressLine";
+import ActivityCard from "./components/ActivityCard";
 import Socials from "./components/Socials";
 import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
 import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { faC } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 function App() {
+  const [selectedActivityCard, setSelectedActivityCard] = useState<number>(1);
+
   return (
     <div className="App">
       <div className="none md:block fixed top-0">
@@ -46,6 +51,38 @@ function App() {
           <span>Download my CV</span>
         </button>
       </motion.div>
+
+      <div className="grid grid-cols-2 w-[1000px] mr-auto ml-auto mt-40">
+        <div className="text-left">
+          <ActivityCard
+            onClick={() => setSelectedActivityCard(1)}
+            selected={selectedActivityCard === 1}
+            title="Backend"
+            description="Create digital products with unique ideas"
+            projectCount={12}
+          />
+
+          <ActivityCard
+            onClick={() => setSelectedActivityCard(2)}
+            selected={selectedActivityCard === 2}
+            title="Frontend"
+            description="Create digital products with unique ideas"
+            projectCount={20}
+          />
+
+          <ActivityCard
+            onClick={() => setSelectedActivityCard(3)}
+            selected={selectedActivityCard === 3}
+            title="Design"
+            description="Create digital products with unique ideas"
+            projectCount={10}
+          />
+        </div>
+
+        <div className="text-right">
+          <ActivityContent selectedItem={selectedActivityCard}/>
+        </div>
+      </div>
 
       <div className="mt-[150px] mr-auto ml-auto w-[800px]">
         <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 My projects</h1>
@@ -116,7 +153,6 @@ function App() {
           ]}
         />
       </div>
-      
     </div>
   );
 }
