@@ -12,7 +12,7 @@ import { faC } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 function App() {
-  const [selectedActivityCard, setSelectedActivityCard] = useState<number>(1);
+  const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
 
   return (
     <div className="App">
@@ -55,31 +55,31 @@ function App() {
       <div className="grid grid-cols-2 w-[1000px] mr-auto ml-auto mt-40">
         <div className="text-left">
           <ActivityCard
-            onClick={() => setSelectedActivityCard(1)}
-            selected={selectedActivityCard === 1}
+            onClick={() => setSelectedActivityCard(0)}
+            selected={selectedActivityCard === 0}
             title="Backend"
             description="Create digital products with unique ideas"
             projectCount={12}
           />
 
           <ActivityCard
-            onClick={() => setSelectedActivityCard(2)}
-            selected={selectedActivityCard === 2}
+            onClick={() => setSelectedActivityCard(1)}
+            selected={selectedActivityCard === 1}
             title="Frontend"
             description="Create digital products with unique ideas"
             projectCount={20}
           />
 
           <ActivityCard
-            onClick={() => setSelectedActivityCard(3)}
-            selected={selectedActivityCard === 3}
+            onClick={() => setSelectedActivityCard(2)}
+            selected={selectedActivityCard === 2}
             title="Design"
             description="Create digital products with unique ideas"
             projectCount={10}
           />
         </div>
 
-        <div className="text-right">
+        <div className="text-left ml-[100px]">
           <ActivityContent selectedItem={selectedActivityCard}/>
         </div>
       </div>

@@ -13,7 +13,7 @@ interface IContent {
 }
 
 const ActivityContent = ({ selectedItem }: IProps) => {
-    const [selected, setSelected] = useState<number>(1);
+    const [selected, setSelected] = useState<number>(0);
 
     useEffect(() => {
         setSelected(selectedItem);
@@ -30,34 +30,38 @@ const ActivityContent = ({ selectedItem }: IProps) => {
             emoji: "🌐",
             title: "Frontend damn crazy",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis!"
+            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
         },
         {
             emoji: "📷",
             title: "Design damn crazy",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis!"
+            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
         }
     ];
 
     return (
         <motion.div>
-            <motion.label>
+            <motion.label className='text-gray-400 font-roboto text-[15px]'>
                 What I do
             </motion.label>
 
-            <motion.h1>
+            <motion.h1 className='text-blue-600 text-[30px] font-poppins font-bold mt-5'>
                 {
                     `${content[selected].emoji} ${content[selected].title}`
                 }
             </motion.h1>
 
-            <motion.h3>
-                { content[selected].description }
+            <motion.h3 className='text-gray-400 mt-2'>
+                {
+                    content[selected].description 
+                }
             </motion.h3>
 
-            <motion.p>
-                { content[selected].longDescription }
+            <motion.p className='text-gray-500 text-[14px] mt-4'>
+                { 
+                    content[selected].longDescription 
+                }
             </motion.p>
         </motion.div>
     )
