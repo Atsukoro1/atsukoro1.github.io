@@ -84,15 +84,22 @@ function App() {
         </div>
       </div>
 
-      <div className="mt-[150px] mr-auto ml-auto w-[800px]">
+      <div className={`
+        mt-[150px] mr-auto ml-auto w-[400px] md:w-[800px] text-center md:text-left`
+      }>
         <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 My projects</h1>
-        <p className="mt-3 text-gray-400 text-xl table w-[500px]">
+        <p className="mt-3 text-gray-400 text-xl table w-[400px] md:w-[500px]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>
       </div>
 
-      <div className="mt-[50px] mr-auto ml-auto w-[800px] grid grid-cols-2">
+      <div 
+        className={
+          `mt-[50px] mr-auto ml-auto w-[50%] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
+           2xl:w-[1200px] 2xl:grid-cols-3 grid-gap-4`
+        }
+      >
         <Project
           name="Portfolio"
           description="Simple portofolio made using React, Node.js, Typescript, TailwindCSS and Framer motion. This project is used as my main website."
@@ -152,6 +159,11 @@ function App() {
             }
           ]}
         />
+      </div>
+
+      <div className="mt-25">
+        <motion.h1>Contact</motion.h1>
+        <motion.p>lorem ipsum dolor sit amet.orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. </motion.p>
       </div>
     </div>
   );
