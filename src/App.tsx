@@ -161,9 +161,29 @@ function App() {
         />
       </div>
 
-      <div className="mt-25">
-        <motion.h1>Contact</motion.h1>
-        <motion.p>lorem ipsum dolor sit amet.orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. </motion.p>
+      <div className="mt-[90px] w-[500px] mr-auto ml-auto text-center">
+        <motion.h1
+          className="text-blue-600 font-poppins font-bold text-[27px]"
+        >
+          Contact
+        </motion.h1>
+
+        <motion.p className="text-gray-500 text-[15px]">
+          lorem ipsum dolor sit amet.orem ipsum dolor sit amet. orem ipsum dolor sit amet. 
+          orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. 
+          orem ipsum dolor sit amet. 
+        </motion.p>
+
+        <a href="mailto:dornicakkuba@gmail.com">
+          <motion.button
+            className={`
+              bg-blue-600 text-white font-roboto pt-3 pr-5 pl-5 pb-3 mb-28
+              rounded-md mt-5 hover:opacity-75 transition ease-in-out duration-200`
+            }
+          >
+            Contact me
+          </motion.button>
+        </a>
       </div>
     </div>
   );
