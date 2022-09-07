@@ -35,7 +35,7 @@ const DarkModeButton = () => {
             checked={darkMode}
             onChange={switchDarkMode}
             className={
-                `${darkMode ? "bg-blue-600" : "bg-gray-600"} 
+                `${darkMode ? "bg-blue-600" : "bg-gray-300 dark:bg-gray-600"} 
                 relative inline-flex h-8 w-14 items-center rounded-full
                 transition ease-in-out duration-200`
             }

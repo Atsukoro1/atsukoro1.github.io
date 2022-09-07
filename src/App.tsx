@@ -17,7 +17,7 @@ function App() {
   const [_, width] = useViewPort();
 
   return (
-    <div className="App">
+    <div className="bg-white dark:bg-slate-900">
       <div className="none md:block fixed top-0">
         <ProgressLine/>
         <Navbar></Navbar>
@@ -43,8 +43,12 @@ function App() {
         `}>
           Jakub Dornicak
         </label>
-        <p className="font-poppins text-gray-400 font-bold md:text-[60px] text-[25px] mt-[-7px] text-white">I build things for the web</p>
-        <p className="font-poppins mt-2 text-[15px] md:text-[20px] text-gray-400">
+
+        <p className="font-poppins font-bold md:text-[60px] text-[25px] mt-[-7px] text-blue-600">
+          I build things for the web
+        </p>
+
+        <p className="font-poppins mt-2 text-[15px] md:text-[20px] dark:text-gray-300 text-gray-500">
           Frontend & Backend web developing<br/>
           nevim neco nevim neco tu bude
         </p>
@@ -124,7 +128,7 @@ function App() {
         mt-[150px] mr-auto ml-auto w-[400px] md:w-[800px] text-center md:text-left`
       }>
         <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 My projects</h1>
-        <p className="mt-3 text-gray-400 text-xl table w-[400px] md:w-[500px]">
+        <p className="mt-3 text-slate-500 dark:text-slate-400 text-xl table w-[400px] md:w-[500px]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. 
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
         </p>

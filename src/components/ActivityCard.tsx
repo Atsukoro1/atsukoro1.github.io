@@ -28,8 +28,8 @@ const ActivityCard = ({
         <motion.div 
             onClick={() => { onClick() }}
             className={
-                `bg-slate-800 mb-5 p-2 rounded-md grid grid-cols-2 hover:cursor-pointer
-                ${isSelected ? "shadow-2xl shadow-slate-800" : "opacity-80"}`
+                `dark:bg-slate-800 bg-slate-200 mb-5 p-2 rounded-md grid grid-cols-2 hover:cursor-pointer
+                ${isSelected ? "shadow-2xl shadow-slate-300 dark:shadow-slate-800" : "opacity-80"}`
             }
             // TODO: Do this with framer later
             style={{

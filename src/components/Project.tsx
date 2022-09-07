@@ -37,7 +37,7 @@ const Project = ({
 
   return (
     <motion.div 
-      className="bg-slate-800 h-[300px] w-[370px] p-4 rounded-lg mb-10"
+      className="bg-slate-200 dark:bg-slate-800 h-[300px] w-[370px] p-4 rounded-lg mb-10"
       // initial="offscreen"
       // whileInView="onscreen"
       // variants={cardVariants}
@@ -49,9 +49,11 @@ const Project = ({
         size="3x"
       />
 
-      <motion.h1 className="text-gray-200 font-poppins text-xl font-normal">{ name }</motion.h1>
+      <motion.h1 className="text-slate-700 dark:text-gray-200 font-poppins text-xl font-normal">
+        { name }
+      </motion.h1>
 
-      <motion.p className="text-gray-400 font-poppins text-[15px] table w-[250px]">{ description }</motion.p>
+      <motion.p className="text-gray-500 dark:text-gray-400 font-poppins text-[15px] table w-[250px]">{ description }</motion.p>
 
       <div className="grid grid-cols-3 mt-4">
         { 
@@ -60,12 +62,14 @@ const Project = ({
 
             return (
               <motion.div 
-                className="bg-slate-700 p-1 rounded-full text-center text-slate-300 m-2" 
+                className="bg-slate-300 dark:bg-slate-700 p-1 rounded-full text-center text-slate-300 m-2" 
                 key={key}
               >
-                <FontAwesomeIcon icon={el.icon}/>
+                <FontAwesomeIcon className="dark:text-white text-slate-700" icon={el.icon}/>
                 &nbsp;
-                <label>{ el.name }</label>
+                <label className="dark:text-white text-slate-700">
+                  { el.name }
+                </label>
               </motion.div>
             )
           }) 
