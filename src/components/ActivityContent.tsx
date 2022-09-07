@@ -41,7 +41,7 @@ const ActivityContent = ({ selectedItem }: IProps) => {
     ];
 
     return (
-        <motion.div>
+        <motion.div className='mb-8'>
             <motion.label className='text-gray-400 font-roboto text-[15px]'>
                 What I do
             </motion.label>

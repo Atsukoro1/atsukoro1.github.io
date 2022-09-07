@@ -6,35 +6,34 @@ import { useState, useEffect } from "react";
 const DarkModeButton = () => {
     const [darkMode, setDarkMode] = useState<boolean>(false);
 
-    // TODO: Fix
+    function switchDarkMode(value: boolean) {
+        if(value) {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+            setDarkMode(true);
+        } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+            setDarkMode(false);
+        }
+    }
+
     useEffect(() => {
         const theme: string | null = localStorage.getItem("theme");
 
-        setDarkMode(
-            !theme || theme === "dark"
-                ? true
-                : false
-        );
+        console.log(theme);
 
-        if(!theme || theme === "dark") {
-            document.documentElement.classList.add('dark');
-            localStorage.setItem("theme", "dark");
-        };
-    }, []);
-
-    useEffect(() => {
-        if(localStorage.getItem("theme") === "dark") {
-            localStorage.setItem("theme", "light");
+        if(!theme || theme == "dark") {
+            switchDarkMode(true);
         } else {
-            document.documentElement.classList.add('dark')
-            localStorage.setItem("theme", "dark");
+            document.documentElement.classList.remove("dark");
         }
-    }, [darkMode]);
+    }, []);
 
     return (
         <Switch
             checked={darkMode}
-            onChange={setDarkMode}
+            onChange={switchDarkMode}
             className={
                 `${darkMode ? "bg-blue-600" : "bg-gray-600"} 
                 relative inline-flex h-8 w-14 items-center rounded-full

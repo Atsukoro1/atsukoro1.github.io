@@ -20,27 +20,28 @@ const Project = ({
     description, 
     technologies
 }: IProps) => {
-  const cardVariants: Variants = {
-    offscreen: {
-      x: 150
-    },
-    onscreen: {
-      x: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.7,
-        duration: 1.5
-      }
-    }
-  };
+  // TODO: Make this work and be responsive
+  // const cardVariants: Variants = {
+  //   offscreen: {
+  //     x: 150
+  //   },
+  //   onscreen: {
+  //     x: 0,
+  //     transition: {
+  //       type: "spring",
+  //       bounce: 0.7,
+  //       duration: 1.5
+  //     }
+  //   }
+  // };
 
   return (
     <motion.div 
       className="bg-slate-800 h-[300px] w-[370px] p-4 rounded-lg mb-10"
-      initial="offscreen"
-      whileInView="onscreen"
-      variants={cardVariants}
-      viewport={{ amount: 0.9, once: true }}
+      // initial="offscreen"
+      // whileInView="onscreen"
+      // variants={cardVariants}
+      // viewport={{ amount: 0.9, once: true }}
     >
       <FontAwesomeIcon 
         className="text-blue-600 mb-5" 
