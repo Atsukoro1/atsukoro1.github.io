@@ -10,9 +10,11 @@ import Navbar from "./components/Navbar";
 import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { faC } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import useViewPort from "./hooks/useViewPort";
 
 function App() {
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
+  const [_, width] = useViewPort();
 
   return (
     <div className="App">
@@ -24,7 +26,7 @@ function App() {
 
       {/* Main content */}
       <motion.div
-        className="ml-auto mr-auto md:w-[1000px] w-[500px] mt-[250px] text-center md:text-left"
+        className="ml-auto mr-auto md:w-[1000px] w-[350px] mt-[250px] text-center md:text-left"
         initial={{ rotate: 45 }}
         animate={{ rotate: 0, scale: 1 }}
         transition={{
@@ -35,9 +37,14 @@ function App() {
       >
         <h4 className="text-blue-600 font-roboto md:text-2xl text-xl">👋 Hi, my name is</h4>
 
-        <label className="font-poppins font-bold md:text-[60px] text-[35px] text-white">Jakub Dornicak</label>
-        <p className="font-poppins text-gray-400 font-bold md:text-[60px] text-[35px] mt-[-10px] text-white">I build things for the web</p>
-        <p className="font-poppins mt-2 text-[20px] text-gray-400">
+        <label className={`
+          text-dark dark:text-white font-poppins font-bold md:text-[60px] 
+          text-[30px]
+        `}>
+          Jakub Dornicak
+        </label>
+        <p className="font-poppins text-gray-400 font-bold md:text-[60px] text-[25px] mt-[-7px] text-white">I build things for the web</p>
+        <p className="font-poppins mt-2 text-[15px] md:text-[20px] text-gray-400">
           Frontend & Backend web developing<br/>
           nevim neco nevim neco tu bude
         </p>
@@ -52,7 +59,10 @@ function App() {
         </button>
       </motion.div>
 
-      <div className="grid grid-cols-2 w-[1000px] mr-auto ml-auto mt-40">
+      <div className={
+        `grid grid-cols-2 grid-cols-1 md:grid-cols-2 w-[500px] md:w-[1000px] 
+        mr-auto ml-auto mt-40`
+      }>
         <div className="text-left">
           <ActivityCard
             onClick={() => setSelectedActivityCard(0)}
@@ -62,6 +72,13 @@ function App() {
             projectCount={12}
           />
 
+          {
+            (width < 800 && selectedActivityCard == 0) &&
+              <>
+                <ActivityContent selectedItem={0}/>
+              </>
+          }
+
           <ActivityCard
             onClick={() => setSelectedActivityCard(1)}
             selected={selectedActivityCard === 1}
@@ -70,6 +87,13 @@ function App() {
             projectCount={20}
           />
 
+          {
+            (width < 800 && selectedActivityCard == 1) &&
+              <>
+                <ActivityContent selectedItem={1}/>
+              </>
+          }
+
           <ActivityCard
             onClick={() => setSelectedActivityCard(2)}
             selected={selectedActivityCard === 2}
@@ -77,10 +101,22 @@ function App() {
             description="Create digital products with unique ideas"
             projectCount={10}
           />
+
+          {
+            (width < 800 && selectedActivityCard == 2) &&
+              <>
+                <ActivityContent selectedItem={2}/>
+              </>
+          }
         </div>
 
         <div className="text-left ml-[100px]">
-          <ActivityContent selectedItem={selectedActivityCard}/>
+          {
+            (width > 800) && 
+              <>
+                <ActivityContent selectedItem={selectedActivityCard}/>
+              </>
+          }
         </div>
       </div>
 
@@ -96,7 +132,7 @@ function App() {
 
       <div 
         className={
-          `mt-[50px] mr-auto ml-auto w-[50%] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
+          `mt-[50px] w-[300px] mr-auto ml-auto w-[50%] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
            2xl:w-[1200px] 2xl:grid-cols-3 grid-gap-4`
         }
       >
