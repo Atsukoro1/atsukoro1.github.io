@@ -13,11 +13,18 @@ import Navbar from "./components/Navbar";
 
 function App() {
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
-  const [handMoved, setHandMoved] = useState<boolean>(false);
   const [_, width] = useViewPort();
 
   return (
     <div className="bg-white dark:bg-slate-900">
+
+      <div
+        className={`
+        fixed top-10 w-50 h-50 bg-black
+        `}>
+
+      </div>
+
       <div className="none md:block fixed top-0">
         <ProgressLine/>
         <Navbar></Navbar>
