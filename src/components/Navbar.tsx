@@ -1,7 +1,9 @@
 import LanguageSwitch from "./LanguageSwitch";
 import DarkModeButton from "./DarkModeButton";
 
-const Navbar = () => {
+import { IProps } from "./LanguageSwitch";
+
+const Navbar = ({ onLanguageChange }: IProps) => {
   return (
     <nav className="bg-white dark:bg-slate-900">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -16,7 +18,9 @@ const Navbar = () => {
             </div>
           </div>
           <div className="fixed right-0 flex items-center mr-8">
-            <LanguageSwitch/>
+            <LanguageSwitch onLanguageChange={(lang) => {
+              onLanguageChange(lang);
+            }}/>
             &nbsp;&nbsp;&nbsp;
             <DarkModeButton/>
           </div>

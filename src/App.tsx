@@ -1,8 +1,9 @@
 import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { SelectedLanguage } from "./components/LanguageSwitch";
 import { faC } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import useViewPort from "./hooks/useViewPort";
 import { motion, useScroll } from "framer-motion";
+import useViewPort from "./hooks/useViewPort";
+import { useState } from "react";
 
 import ActivityContent from "./components/ActivityContent";
 import ProgressLine from "./components/ProgressLine";
@@ -12,6 +13,7 @@ import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
 function App() {
+  const [language, setLanguage] = useState<SelectedLanguage>(SelectedLanguage.ENGLISH);
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
   const { scrollYProgress } = useScroll();
   const [_, width] = useViewPort();
@@ -25,9 +27,15 @@ function App() {
     }} className="bg-white dark:bg-slate-900">
       <div className="none md:block fixed top-0">
         <ProgressLine/>
+
+        {language}
         
         {
-          scrollYProgress.get() < 2 && <Navbar/>
+          scrollYProgress.get() < 2 && <Navbar
+            onLanguageChange={(lang) => {
+              setLanguage(lang);
+            }}
+          />
         }
 
         <Socials/>

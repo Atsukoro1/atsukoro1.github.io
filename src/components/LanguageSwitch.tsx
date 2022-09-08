@@ -10,17 +10,24 @@ export enum SelectedLanguage {
     ENGLISH = 2,
 }
 
-const LanguageSwitch = () => {
+export interface IProps {
+    onLanguageChange: (lang: SelectedLanguage) => void;
+}
+
+// TODO: Refactor this shit
+const LanguageSwitch = ({ onLanguageChange }: IProps) => {
     const [language, setLanguage] = useState<SelectedLanguage>(SelectedLanguage.ENGLISH);
 
     function switchLanguage(selected: SelectedLanguage) {
         switch(selected) {
             case SelectedLanguage.CZECH:
+                onLanguageChange(SelectedLanguage.CZECH);
                 setLanguage(SelectedLanguage.CZECH);
                 localStorage.setItem("language", "czech");
                 break;
             
             case SelectedLanguage.ENGLISH:
+                onLanguageChange(SelectedLanguage.ENGLISH);
                 setLanguage(SelectedLanguage.ENGLISH);
                 localStorage.setItem("language", "english");
                 break;
@@ -32,17 +39,35 @@ const LanguageSwitch = () => {
 
         setLanguage(
             !lang || lang === "english" 
-                ? SelectedLanguage.ENGLISH
-                : SelectedLanguage.CZECH
+                ? () => {
+                    onLanguageChange(SelectedLanguage.ENGLISH);
+                    return SelectedLanguage.ENGLISH;
+                }
+                : () => {
+                    onLanguageChange(SelectedLanguage.CZECH);
+                    return SelectedLanguage.CZECH;
+                }
         );
 
         if(!lang) {
             localStorage.setItem("language", "english");
         }
-    }, []);
+    }, [onLanguageChange]);
 
     return (
-        <Tab.Group>
+        <Tab.Group
+            onChange={(index: number) => {
+                switch(index) {
+                    case 0:
+                        switchLanguage(SelectedLanguage.CZECH);
+                        break;
+
+                    case 1: 
+                        switchLanguage(SelectedLanguage.ENGLISH);
+                        break;
+                }
+            }}
+        >
             <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
                 <Tab
                     className={() => 
@@ -55,9 +80,7 @@ const LanguageSwitch = () => {
                                 : 'text-white hover:bg-white/[0.12] hover:text-white'
                         )
                     }
-                    onClick={() => {
-                        switchLanguage(SelectedLanguage.CZECH);
-                    }}
+                    onClick={() => switchLanguage(SelectedLanguage.CZECH)}
                 >
                     <img
                         className="h-[25px] w-[25px] align-middle relative mt-[-8px] ml-[8px]" 
@@ -77,9 +100,7 @@ const LanguageSwitch = () => {
                                 : 'text-white hover:bg-white/[0.12] hover:text-white'
                         )
                     }
-                    onClick={() => {
-                        switchLanguage(SelectedLanguage.ENGLISH);
-                    }}
+                    onClick={() => switchLanguage(SelectedLanguage.ENGLISH)}
                 >
                     <img 
                         className="h-[25px] w-[25px] align-middle relative mt-[-8px] ml-[8px]" 
