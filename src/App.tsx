@@ -12,8 +12,10 @@ import Socials from "./components/Socials";
 import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
+import data from './assets/data';
+
 function App() {
-  const [language, setLanguage] = useState<SelectedLanguage>(SelectedLanguage.ENGLISH);
+  const [language, setLanguage] = useState<number>(0);
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
   const { scrollYProgress } = useScroll();
   const [_, width] = useViewPort();
@@ -27,13 +29,11 @@ function App() {
     }} className="bg-white dark:bg-slate-900">
       <div className="none md:block fixed top-0">
         <ProgressLine/>
-
-        {language}
         
         {
           scrollYProgress.get() < 2 && <Navbar
             onLanguageChange={(lang) => {
-              setLanguage(lang);
+              setLanguage(lang - 1);
             }}
           />
         }
@@ -78,7 +78,7 @@ function App() {
         
           <motion.h4 
             className="text-blue-600 font-roboto md:text-2xl text-xl"> 
-            Hi, my name is
+            { data[language].welcome[0] }
           </motion.h4>
         </div>
 
@@ -87,7 +87,7 @@ function App() {
           text-dark dark:text-white font-poppins font-bold md:text-[60px] 
           text-[30px]
         `}>
-          Jakub Dornicak
+          { data[language].welcome[1] }
         </label>
 
         <p 
@@ -96,12 +96,11 @@ function App() {
             textShadow: `0 0 2px #2563eb, 0 0 40px #2563eb`
           }}
         >
-          I build full-stack web apps
+          { data[language].welcome[2] }
         </p>
 
         <p className="font-poppins mt-2 text-[15px] md:text-[20px] dark:text-gray-300 text-gray-500">
-          Frontend & Backend web developing<br/>
-          nevim neco nevim neco tu bude
+          { data[language].welcome[3] }
         </p>
 
         <button className={`
@@ -110,7 +109,7 @@ function App() {
           items-center hover:bg-blue-600 hover:bg-opacity-10
         `}>
           <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
-          <span>Download my CV</span>
+          <span>{ data[language].welcome[4] }</span>
         </button>
       </motion.div>
 
@@ -122,7 +121,7 @@ function App() {
           <ActivityCard
             onClick={() => setSelectedActivityCard(0)}
             selected={selectedActivityCard === 0}
-            title="Backend"
+            title={data[language].whatIDo[0]}
             description="Create digital products with unique ideas"
             projectCount={12}
           />
@@ -137,7 +136,7 @@ function App() {
           <ActivityCard
             onClick={() => setSelectedActivityCard(1)}
             selected={selectedActivityCard === 1}
-            title="Frontend"
+            title={data[language].whatIDo[1]}
             description="Create digital products with unique ideas"
             projectCount={20}
           />
@@ -152,7 +151,7 @@ function App() {
           <ActivityCard
             onClick={() => setSelectedActivityCard(2)}
             selected={selectedActivityCard === 2}
-            title="Design"
+            title={data[language].whatIDo[2]}
             description="Create digital products with unique ideas"
             projectCount={10}
           />

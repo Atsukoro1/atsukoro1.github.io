@@ -82,10 +82,10 @@ const LanguageSwitch = ({ onLanguageChange }: IProps) => {
                     }
                     onClick={() => switchLanguage(SelectedLanguage.CZECH)}
                 >
-                    <img
+                    <img 
                         className="h-[25px] w-[25px] align-middle relative mt-[-8px] ml-[8px]" 
-                        src="./czech_flag.png"
-                        alt='czech_flag'
+                        src="./english_flag.png"
+                        alt='english_flag'
                     />
                 </Tab>
 
@@ -102,10 +102,10 @@ const LanguageSwitch = ({ onLanguageChange }: IProps) => {
                     }
                     onClick={() => switchLanguage(SelectedLanguage.ENGLISH)}
                 >
-                    <img 
+                    <img
                         className="h-[25px] w-[25px] align-middle relative mt-[-8px] ml-[8px]" 
-                        src="./english_flag.png"
-                        alt='english_flag'
+                        src="./czech_flag.png"
+                        alt='czech_flag'
                     />
                 </Tab>
             </Tab.List>
