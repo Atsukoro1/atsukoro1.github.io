@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
+import data from '../assets/data';
+
 interface IProps {
     title: string;
     description: string;

@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div style={{
-      backgroundImage: "url('../background.png')",
+      backgroundImage: "url('../assets/background.png')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       height: "100vh"
@@ -54,7 +54,6 @@ function App() {
       >
       
         <div className="inline-flex mt-40">
-          {/* TODO: Make the hand moving */}
           <motion.h4
             drag
             draggable={true}
@@ -177,10 +176,9 @@ function App() {
       <div className={`
         mt-[150px] mr-auto ml-auto w-[400px] md:w-[800px] text-center md:text-left`
       }>
-        <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 My projects</h1>
+        <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 { data[language].projectHeader[0] }</h1>
         <p className="mt-3 text-slate-500 dark:text-slate-400 text-xl table w-[410px] md:w-[522px]">
-          These are the projects that I am most proud of, started as a hobby,
-          now trying to use this experiences in real projects.
+          { data[language].projectHeader[1] }
         </p>
       </div>
 
@@ -191,8 +189,8 @@ function App() {
         }
       >
         <Project
-          name="Portfolio"
-          description="The simple portfolio you are currently on. I built it using technologies like Framer motion, React and Tailwindcss."
+          name={ data[language].projects[0][0] }
+          description={ data[language].projects[0][1] }
           technologies={[
             {
               name: "React",
@@ -210,8 +208,8 @@ function App() {
         />
 
         <Project
-          name="Netscrape"
-          description="Network packet sniffer, display everything that's flowing through your network in beautiful human readable format!"
+          name={ data[language].projects[1][0] }
+          description={ data[language].projects[1][1] }
           technologies={[
             {
               name: "C",
@@ -221,8 +219,8 @@ function App() {
         />
 
         <Project
-          name="Contalk"
-          description="Messenger-like application with fully working friend system, real time messaging and authentication."
+          name={ data[language].projects[2][0] }
+          description={ data[language].projects[2][1] }
           technologies={[
             {
               name: "Node.js",
@@ -236,8 +234,8 @@ function App() {
         />
 
         <Project
-          name="Viceverse"
-          description="Website for our web services company, made with Vue and Tailwind CSS."
+          name={ data[language].projects[3][0] }
+          description={ data[language].projects[3][1] }
           technologies={[
             {
               name: "VueJS",
@@ -255,12 +253,11 @@ function App() {
         <motion.h1
           className="text-blue-600 font-poppins font-bold text-[27px]"
         >
-          Contact ✌️
+          { data[language].contact[0] } ✌️
         </motion.h1>
 
         <motion.p className="text-gray-400 text-[16px]">
-        If you would like to discuss working on your future project or just have a chat, 
-        feel free to contact me via email using the button below.
+          { data[language].contact[1] }
         </motion.p>
 
         <a href="mailto:dornicakkuba@gmail.com">
@@ -278,7 +275,7 @@ function App() {
               rounded-md mt-5 hover:opacity-75 transition ease-in-out duration-200`
             }
           >
-            Contact me
+            { data[language].contact[2] }
           </motion.button>
         </a>
       </div>
