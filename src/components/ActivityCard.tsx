@@ -31,11 +31,14 @@ const ActivityCard = ({
                 `dark:bg-slate-800 bg-slate-200 mb-5 p-2 rounded-md grid grid-cols-2 hover:cursor-pointer
                 ${isSelected ? "shadow-2xl shadow-slate-300 dark:shadow-slate-800" : "opacity-80"}`
             }
-            // TODO: Do this with framer later
-            style={{
+            animate={{
                 scale: isSelected ? 1.04 : 1,
-                transition: "ease-in-out",
-                transitionDuration: "80ms"
+                transition: {
+                    type: "spring",
+                    duration: 200,
+                    stiffness: 300,
+                    bounce: 200
+                }
             }}
         >
             <motion.div>

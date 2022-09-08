@@ -14,10 +14,17 @@ interface IContent {
 
 const ActivityContent = ({ selectedItem }: IProps) => {
     const [selected, setSelected] = useState<number>(0);
+    const [animating, setAnimating] = useState<boolean>(true);
 
     useEffect(() => {
         setSelected(selectedItem);
     }, [selectedItem]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setAnimating(!animating);
+        }, 500)
+    }, [animating]);
 
     const content: IContent[] = [
         {
@@ -42,11 +49,27 @@ const ActivityContent = ({ selectedItem }: IProps) => {
 
     return (
         <motion.div className='mb-8'>
-            <motion.label className='text-gray-400 font-roboto text-[15px]'>
+            <motion.h4
+                initial={{
+                    translateY: 100
+                }}
+                animate={{
+                    translateY: 0
+                }}
+                transition={{
+                    type: "spring",
+                    duration: 200,
+                    bounce: 100,
+                    stiffness: 300
+                }}
+                className='text-gray-400 font-roboto text-[15px]'
+            >
                 What I do
-            </motion.label>
+            </motion.h4>
 
-            <motion.h1 className='text-blue-600 text-[30px] font-poppins font-bold mt-5'>
+            <motion.h1 
+                className='text-blue-600 text-[30px] font-poppins font-bold mt-5'
+            >
                 {
                     `${content[selected].emoji} ${content[selected].title}`
                 }
