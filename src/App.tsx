@@ -2,7 +2,7 @@ import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg
 import { faC } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 import useViewPort from "./hooks/useViewPort";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 import ActivityContent from "./components/ActivityContent";
 import ProgressLine from "./components/ProgressLine";
@@ -13,27 +13,29 @@ import Navbar from "./components/Navbar";
 
 function App() {
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
+  const { scrollYProgress } = useScroll();
   const [_, width] = useViewPort();
 
   return (
-    <div className="bg-white dark:bg-slate-900">
-
-      <div
-        className={`
-        fixed top-10 w-50 h-50 bg-black
-        `}>
-
-      </div>
-
+    <div style={{
+      backgroundImage: "url('../background.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: "100vh"
+    }} className="bg-white dark:bg-slate-900">
       <div className="none md:block fixed top-0">
         <ProgressLine/>
-        <Navbar></Navbar>
-        <Socials></Socials>
+        
+        {
+          scrollYProgress.get() < 2 && <Navbar/>
+        }
+
+        <Socials/>
       </div>
 
       {/* Main content */}
       <motion.div
-        className="ml-auto mr-auto md:w-[1000px] w-[350px] mt-[250px] text-center md:text-left"
+        className="ml-auto mrt- mr-auto md:w-[1000px] w-[350px] text-center md:text-left"
         initial={{ rotate: 45 }}
         animate={{ rotate: 0, scale: 1 }}
         transition={{
@@ -43,9 +45,11 @@ function App() {
         }}
       >
       
-        <div className="inline-flex">
+        <div className="inline-flex mt-40">
           {/* TODO: Make the hand moving */}
           <motion.h4
+            drag
+            draggable={true}
             animate={{
               rotate: [0, 35, 0],
             }}
@@ -78,8 +82,13 @@ function App() {
           Jakub Dornicak
         </label>
 
-        <p className="font-poppins font-bold md:text-[60px] text-[25px] mt-[-7px] text-blue-600">
-          I build things for the web
+        <p 
+          className="font-poppins font-bold md:text-[60px] text-[25px] mt-[-7px] text-blue-600"
+          style={{
+            textShadow: `0 0 2px #2563eb, 0 0 40px #2563eb`
+          }}
+        >
+          I build full-stack web apps
         </p>
 
         <p className="font-poppins mt-2 text-[15px] md:text-[20px] dark:text-gray-300 text-gray-500">
@@ -162,9 +171,9 @@ function App() {
         mt-[150px] mr-auto ml-auto w-[400px] md:w-[800px] text-center md:text-left`
       }>
         <h1 className="font-poppins font-bold text-blue-600 text-[35px]">💻 My projects</h1>
-        <p className="mt-3 text-slate-500 dark:text-slate-400 text-xl table w-[400px] md:w-[500px]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <p className="mt-3 text-slate-500 dark:text-slate-400 text-xl table w-[410px] md:w-[522px]">
+          These are the projects that I am most proud of, started as a hobby,
+          now trying to use this experiences in real projects.
         </p>
       </div>
 
@@ -176,7 +185,7 @@ function App() {
       >
         <Project
           name="Portfolio"
-          description="Simple portofolio made using React, Node.js, Typescript, TailwindCSS and Framer motion. This project is used as my main website."
+          description="The simple portfolio you are currently on. I built it using technologies like Framer motion, React and Tailwindcss."
           technologies={[
             {
               name: "React",
@@ -195,7 +204,7 @@ function App() {
 
         <Project
           name="Netscrape"
-          description="TCP traffic sniffer, displaying packets in human-readable format, I will do a remake of this in rust with GUI soon."
+          description="Network packet sniffer, display everything that's flowing through your network in beautiful human readable format!"
           technologies={[
             {
               name: "C",
@@ -206,7 +215,7 @@ function App() {
 
         <Project
           name="Contalk"
-          description="Messenger-like application, simple chan using websockets (socket.io) and frontend using react."
+          description="Messenger-like application with fully working friend system, real time messaging and authentication."
           technologies={[
             {
               name: "Node.js",
@@ -221,7 +230,7 @@ function App() {
 
         <Project
           name="Viceverse"
-          description="Website for our company, made with Vue and tailwind."
+          description="Website for our web services company, made with Vue and Tailwind CSS."
           technologies={[
             {
               name: "VueJS",
@@ -235,17 +244,16 @@ function App() {
         />
       </div>
 
-      <div className="mt-[90px] w-[500px] mr-auto ml-auto text-center">
+      <div className="mt-[50px] mb-[250px] w-[500px] mr-auto ml-auto text-center">
         <motion.h1
           className="text-blue-600 font-poppins font-bold text-[27px]"
         >
-          Contact
+          Contact ✌️
         </motion.h1>
 
-        <motion.p className="text-gray-500 text-[15px]">
-          lorem ipsum dolor sit amet.orem ipsum dolor sit amet. orem ipsum dolor sit amet. 
-          orem ipsum dolor sit amet. orem ipsum dolor sit amet. orem ipsum dolor sit amet. 
-          orem ipsum dolor sit amet. 
+        <motion.p className="text-gray-400 text-[16px]">
+        If you would like to discuss working on your future project or just have a chat, 
+        feel free to contact me via email using the button below.
         </motion.p>
 
         <a href="mailto:dornicakkuba@gmail.com">

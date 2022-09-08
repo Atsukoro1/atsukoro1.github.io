@@ -29,21 +29,21 @@ const ActivityContent = ({ selectedItem }: IProps) => {
     const content: IContent[] = [
         {
             emoji: "🖥️",
-            title: "Backend damn crazy",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis!"
+            title: "Backend",
+            description: "Functional side of websites I do.", 
+            longDescription: "I enjoy writing complex web servers in Node.js, I've worked in libraries/frameworks like Express, Fastify, Nest.JS and others (you can find them all on my github). I also have experience with both SQL and NoSQL databases, specifically I've often worked with MongoDB, MySQL and PostgreSQL. I'm always open to try new technologies and improve the projects I'm working on."
         },
         {
             emoji: "🌐",
-            title: "Frontend damn crazy",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            title: "Frontend",
+            description: "The visible site of the work I do.", 
+            longDescription: "For most of my web applications I also did the frontend. Most of the time I work with React and VueJS, I can work with classic CSS and other CSS frameworks like TailwindCSS or Bootstrap. I often use the Framer motion library with React to create beautiful smooth animations on the page."
         },
         {
-            emoji: "📷",
-            title: "Design damn crazy",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit.", 
-            longDescription: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repellat ipsum a. Magni, maxime! Assumenda, nisi placeat fugit totam itaque repellat aperiam numquam quidem nam recusandae molestiae, tempora non omnis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            emoji: "⌨️",
+            title: "Other",
+            description: "Other things I do in my free time.", 
+            longDescription: "Apart from web applications, in my free time I make terminal or desktop applications using Rust. I don't have that much experience in this language yet, but I believe that in the future I will be able to work in it as well."
         }
     ];
 

@@ -1,4 +1,5 @@
-import DarkModeButton from "./DarkModeButton"
+import LanguageSwitch from "./LanguageSwitch";
+import DarkModeButton from "./DarkModeButton";
 
 const Navbar = () => {
   return (
@@ -15,6 +16,8 @@ const Navbar = () => {
             </div>
           </div>
           <div className="fixed right-0 flex items-center mr-8">
+            <LanguageSwitch/>
+            &nbsp;&nbsp;&nbsp;
             <DarkModeButton/>
           </div>
         </div>
