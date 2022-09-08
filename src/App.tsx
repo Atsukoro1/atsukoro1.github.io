@@ -1,3 +1,7 @@
+import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faC } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import useViewPort from "./hooks/useViewPort";
 import { motion } from "framer-motion";
 
 import ActivityContent from "./components/ActivityContent";
@@ -7,13 +11,9 @@ import Socials from "./components/Socials";
 import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
-import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
-import { faC } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import useViewPort from "./hooks/useViewPort";
-
 function App() {
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
+  const [handMoved, setHandMoved] = useState<boolean>(false);
   const [_, width] = useViewPort();
 
   return (
@@ -35,8 +35,35 @@ function App() {
           damping: 20
         }}
       >
-        <h4 className="text-blue-600 font-roboto md:text-2xl text-xl">👋 Hi, my name is</h4>
+      
+        <div className="inline-flex">
+          {/* TODO: Make the hand moving */}
+          <motion.h4
+            animate={{
+              rotate: [0, 35, 0],
+            }}
+            transition={{
+              type: "keyframes",
+              duration: 1,
+              ease: "easeInOut",
+              times: [0, 0.2],
+              repeat: Infinity,
+              repeatDelay: 0
+            }}
+            className="w-[fit-content] text-[25px]"
+          >
+            👋
+          </motion.h4> 
 
+          &nbsp;
+        
+          <motion.h4 
+            className="text-blue-600 font-roboto md:text-2xl text-xl"> 
+            Hi, my name is
+          </motion.h4>
+        </div>
+
+        <br/>
         <label className={`
           text-dark dark:text-white font-poppins font-bold md:text-[60px] 
           text-[30px]
@@ -77,7 +104,7 @@ function App() {
           />
 
           {
-            (width < 800 && selectedActivityCard == 0) &&
+            (width < 800 && selectedActivityCard === 0) &&
               <>
                 <ActivityContent selectedItem={0}/>
               </>
@@ -92,7 +119,7 @@ function App() {
           />
 
           {
-            (width < 800 && selectedActivityCard == 1) &&
+            (width < 800 && selectedActivityCard === 1) &&
               <>
                 <ActivityContent selectedItem={1}/>
               </>
@@ -107,7 +134,7 @@ function App() {
           />
 
           {
-            (width < 800 && selectedActivityCard == 2) &&
+            (width < 800 && selectedActivityCard === 2) &&
               <>
                 <ActivityContent selectedItem={2}/>
               </>
@@ -216,6 +243,14 @@ function App() {
 
         <a href="mailto:dornicakkuba@gmail.com">
           <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 400,
+              damping: 17,
+              duration: 0.5 
+            }}
             className={`
               bg-blue-600 text-white font-roboto pt-3 pr-5 pl-5 pb-3 mb-28
               rounded-md mt-5 hover:opacity-75 transition ease-in-out duration-200`
