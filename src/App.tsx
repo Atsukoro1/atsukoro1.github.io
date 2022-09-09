@@ -216,6 +216,7 @@ function App() {
               icon: faCss3
             }
           ]}
+          imagePath={"project_portfolio.png"}
         />
 
         <Project
@@ -227,6 +228,7 @@ function App() {
               icon: faC
             }
           ]}
+          imagePath={"project_netscrape.png"}
         />
 
         <Project
@@ -242,6 +244,7 @@ function App() {
               icon: faReact
             }
           ]}
+          imagePath={"project_contalk.png"}
         />
 
         <Project
@@ -257,6 +260,7 @@ function App() {
               icon: faCss3
             }
           ]}
+          imagePath={"project_viceverse.png"}
         />
       </div>
 
