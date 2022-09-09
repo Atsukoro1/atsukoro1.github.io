@@ -1,5 +1,4 @@
 import { faCss3, faNodeJs, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
-import { SelectedLanguage } from "./components/LanguageSwitch";
 import { faC } from "@fortawesome/free-solid-svg-icons";
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
@@ -121,14 +120,17 @@ function App() {
             onClick={() => setSelectedActivityCard(0)}
             selected={selectedActivityCard === 0}
             title={data[language].whatIDo[0]}
-            description="Create digital products with unique ideas"
+            description={data[language].activityContent[3]}
             projectCount={12}
           />
 
           {
             (width < 800 && selectedActivityCard === 0) &&
               <>
-                <ActivityContent selectedItem={0}/>
+                <ActivityContent 
+                  selectedItem={0}
+                  selectedLang={language}
+                />
               </>
           }
 
@@ -136,14 +138,17 @@ function App() {
             onClick={() => setSelectedActivityCard(1)}
             selected={selectedActivityCard === 1}
             title={data[language].whatIDo[1]}
-            description="Create digital products with unique ideas"
+            description={data[language].activityContent[4]}
             projectCount={20}
           />
 
           {
             (width < 800 && selectedActivityCard === 1) &&
               <>
-                <ActivityContent selectedItem={1}/>
+                <ActivityContent 
+                  selectedItem={1}
+                  selectedLang={language}
+                />
               </>
           }
 
@@ -151,14 +156,17 @@ function App() {
             onClick={() => setSelectedActivityCard(2)}
             selected={selectedActivityCard === 2}
             title={data[language].whatIDo[2]}
-            description="Create digital products with unique ideas"
+            description={data[language].activityContent[5]}
             projectCount={10}
           />
 
           {
             (width < 800 && selectedActivityCard === 2) &&
               <>
-                <ActivityContent selectedItem={2}/>
+                <ActivityContent 
+                  selectedItem={2}
+                  selectedLang={language}
+                />
               </>
           }
         </div>
@@ -167,7 +175,10 @@ function App() {
           {
             (width > 800) && 
               <>
-                <ActivityContent selectedItem={selectedActivityCard}/>
+                <ActivityContent 
+                  selectedItem={selectedActivityCard}
+                  selectedLang={language}
+                />
               </>
           }
         </div>

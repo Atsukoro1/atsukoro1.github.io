@@ -6,13 +6,13 @@ const languageSlice = createSlice({
         value: 0
     },
     reducers: {
-        toggle: state => {
+        set: (state, _action) => {
             state.value = state.value === 1 ? 0 : 1;
         }
     }
 });
 
-export const { toggle } = languageSlice.actions;
+export const { set } = languageSlice.actions;
 
 const store = configureStore({
     reducer: languageSlice.reducer
