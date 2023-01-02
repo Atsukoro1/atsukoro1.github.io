@@ -23,7 +23,7 @@ const DarkModeButton = () => {
 
         console.log(theme);
 
-        if(!theme || theme == "dark") {
+        if(!theme || theme === "dark") {
             switchDarkMode(true);
         } else {
             document.documentElement.classList.remove("dark");

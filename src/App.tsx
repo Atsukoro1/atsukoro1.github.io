@@ -17,7 +17,7 @@ function App() {
   const [language, setLanguage] = useState<number>(0);
   const [selectedActivityCard, setSelectedActivityCard] = useState<number>(0);
   const { scrollYProgress } = useScroll();
-  const [_, width] = useViewPort();
+  const [width] = useViewPort();
 
   return (
     <div style={{
@@ -112,7 +112,7 @@ function App() {
       </motion.div>
 
       <div className={
-        `grid grid-cols-2 grid-cols-1 md:grid-cols-2 w-[500px] md:w-[1000px] 
+        `grid grid-cols-1 md:grid-cols-2 w-[500px] md:w-[1000px] 
         mr-auto ml-auto mt-40`
       }>
         <div className="text-left">
@@ -195,7 +195,7 @@ function App() {
 
       <div 
         className={
-          `mt-[50px] w-[300px] mr-auto ml-auto w-[50%] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
+          `mt-[50px] mr-auto ml-auto w-[50%] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
            2xl:w-[1200px] 2xl:grid-cols-3 grid-gap-4`
         }
       >

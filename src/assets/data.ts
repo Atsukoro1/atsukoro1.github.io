@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         "welcome": [
             "Hi, my name is",
@@ -110,3 +110,5 @@ export default [
         ]
     }
 ]
+
+export default data;

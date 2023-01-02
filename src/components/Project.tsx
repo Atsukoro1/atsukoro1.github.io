@@ -1,7 +1,7 @@
 import { IconDefinition } from "@fortawesome/fontawesome-common-types/index";
 import { faDiagramNext } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { motion, Variant, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface ITechnology {
   name: string;

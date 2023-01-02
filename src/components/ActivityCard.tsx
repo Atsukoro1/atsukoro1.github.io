@@ -1,9 +1,7 @@
 import { faProjectDiagram } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-
-import data from '../assets/data';
+import { motion } from 'framer-motion';
 
 interface IProps {
     title: string;
