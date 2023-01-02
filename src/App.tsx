@@ -1,4 +1,12 @@
-import { SiNodedotjs, SiTailwindcss, SiReact, SiVuedotjs, SiSupabase, SiPostgresql, SiC } from 'react-icons/si';
+import {
+	SiNodedotjs,
+	SiTailwindcss,
+	SiReact,
+	SiVuedotjs,
+	SiSupabase,
+	SiPostgresql,
+	SiC,
+} from "react-icons/si";
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
 import { useState } from "react";
@@ -11,7 +19,7 @@ import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
 import data from "./assets/data";
-import TechnologyList from './components/TechnologyList';
+import TechnologyList from "./components/TechnologyList";
 
 function App() {
 	const [language, setLanguage] = useState<number>(0);
@@ -288,18 +296,18 @@ function App() {
 				/>
 			</div>
 
-      <div className='mt-[50px] mr-auto ml-auto w-fit'>
-        <motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
+			<div className='mt-[50px] mr-auto ml-auto w-fit'>
+				<motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
 					Technologie
 				</motion.h1>
 
-        <motion.p className="mb-5 mt-3 text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
-          Tohle vsehcno jsou technologie ktere pouzivam, klfjdslfdkf 
-          fklsdjf sdf fsd;fj sdklfjsdlk jfkldsj fkl sdjklfj dsk f
-        </motion.p>
+				<motion.p className="mb-5 mt-3 text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
+					Tohle vsehcno jsou technologie ktere pouzivam, klfjdslfdkf fklsdjf sdf
+					fsd;fj sdklfjsdlk jfkldsj fkl sdjklfj dsk f
+				</motion.p>
 
-        <TechnologyList/>
-      </div>
+				<TechnologyList />
+			</div>
 
 			<div className="mt-[90px] w-[300px] md:w-[500px] mr-auto ml-auto text-center">
 				<motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">

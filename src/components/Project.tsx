@@ -56,12 +56,7 @@ const Project = ({ name, description, technologies, imagePath }: IProps) => {
 
 				<div className="grid grid-cols-2 mt-4">
 					{technologies.map((el: ITechnology, key: number) => {
-						return (
-							<Technology
-                name={el.name}
-                icon={el.icon}
-              />
-						);
+						return <Technology name={el.name} icon={el.icon} />;
 					})}
 				</div>
 			</div>
