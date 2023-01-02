@@ -1,11 +1,12 @@
-import { IconDefinition } from "@fortawesome/fontawesome-common-types/index";
 import { faDiagramNext } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
+import Technology from "./Technology";
 
 interface ITechnology {
 	name: string;
-	icon: IconDefinition;
+	icon: IconType;
 }
 
 interface IProps {
@@ -56,19 +57,10 @@ const Project = ({ name, description, technologies, imagePath }: IProps) => {
 				<div className="grid grid-cols-2 mt-4">
 					{technologies.map((el: ITechnology, key: number) => {
 						return (
-							<motion.div
-								className="bg-slate-300 dark:bg-slate-700 max-w-full p-1 rounded-full text-center text-slate-300 m-2"
-								key={key}
-							>
-								<FontAwesomeIcon
-									className="dark:text-white text-slate-700"
-									icon={el.icon}
-								/>
-								&nbsp;
-								<label className="dark:text-white text-slate-700">
-									{el.name}
-								</label>
-							</motion.div>
+							<Technology
+                name={el.name}
+                icon={el.icon}
+              />
 						);
 					})}
 				</div>

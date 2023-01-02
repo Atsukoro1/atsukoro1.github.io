@@ -1,10 +1,4 @@
-import {
-	faCss3,
-	faNodeJs,
-	faReact,
-	faVuejs,
-} from "@fortawesome/free-brands-svg-icons";
-import { faC, faDatabase, faServer } from "@fortawesome/free-solid-svg-icons";
+import { SiNodedotjs, SiTailwindcss, SiReact, SiVuedotjs, SiSupabase, SiPostgresql, SiC } from 'react-icons/si';
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
 import { useState } from "react";
@@ -17,6 +11,7 @@ import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
 import data from "./assets/data";
+import TechnologyList from './components/TechnologyList';
 
 function App() {
 	const [language, setLanguage] = useState<number>(0);
@@ -48,7 +43,6 @@ function App() {
 				<Socials />
 			</div>
 
-			{/* Main content */}
 			<motion.div
 				className="ml-auto mrt- mr-auto md:w-[1000px] w-[350px] text-center md:text-left"
 				initial={{ rotate: 45 }}
@@ -126,8 +120,8 @@ function App() {
 			</motion.div>
 
 			<div
-				className={`grid grid-cols-1 md:grid-cols-2 w-[500px] md:w-[1000px] 
-        mr-auto ml-auto mt-40`}
+				className={`grid grid-cols-1 md:grid-cols-2 w-full lg:w-[1000px] 
+        mr-auto ml-auto mt-40 md:w-[700px]`}
 			>
 				<div className="text-left">
 					<ActivityCard
@@ -192,13 +186,17 @@ function App() {
 				<h1 className="font-poppins font-bold text-blue-600 text-[35px]">
 					💻 {data[language].projectHeader[0]}
 				</h1>
-				<p className="mt-3 text-slate-500 dark:text-slate-400 text-xl table w-[410px] md:w-[522px]">
+				<p
+					className="
+          mt-3 text-slate-500 mr-auto ml-auto md:mr-0 md:ml-0 
+          md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400"
+				>
 					{data[language].projectHeader[1]}
 				</p>
 			</div>
 
 			<div
-				className={`mt-[50px] mr-auto ml-auto w-[50%] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
+				className={`mt-[50px] mr-auto ml-auto w-[380px] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
            2xl:w-[1200px] 2xl:grid-cols-3 grid-gap-4`}
 			>
 				<Project
@@ -207,15 +205,15 @@ function App() {
 					technologies={[
 						{
 							name: "React",
-							icon: faReact,
+							icon: SiReact,
 						},
 						{
 							name: "Node.js",
-							icon: faNodeJs,
+							icon: SiNodedotjs,
 						},
 						{
 							name: "Tailwind",
-							icon: faCss3,
+							icon: SiTailwindcss,
 						},
 					]}
 					imagePath={"project_portfolio.png"}
@@ -227,7 +225,7 @@ function App() {
 					technologies={[
 						{
 							name: "C",
-							icon: faC,
+							icon: SiC,
 						},
 					]}
 					imagePath={"project_netscrape.png"}
@@ -239,11 +237,11 @@ function App() {
 					technologies={[
 						{
 							name: "Node.js",
-							icon: faNodeJs,
+							icon: SiNodedotjs,
 						},
 						{
 							name: "React",
-							icon: faReact,
+							icon: SiReact,
 						},
 					]}
 					imagePath={"project_contalk.png"}
@@ -255,11 +253,11 @@ function App() {
 					technologies={[
 						{
 							name: "VueJS",
-							icon: faVuejs,
+							icon: SiVuedotjs,
 						},
 						{
 							name: "Tailwind",
-							icon: faCss3,
+							icon: SiTailwindcss,
 						},
 					]}
 					imagePath={"project_viceverse.png"}
@@ -271,26 +269,39 @@ function App() {
 					technologies={[
 						{
 							name: "NextJS",
-							icon: faReact,
+							icon: SiReact,
 						},
 						{
 							name: "Tailwind",
-							icon: faCss3,
+							icon: SiTailwindcss,
 						},
 						{
 							name: "Postgres",
-							icon: faDatabase,
+							icon: SiPostgresql,
 						},
 						{
 							name: "Supabase",
-							icon: faServer,
+							icon: SiSupabase,
 						},
 					]}
 					imagePath={"project_doucovani.png"}
 				/>
 			</div>
 
-			<div className="mt-[50px] mb-[250px] w-[500px] mr-auto ml-auto text-center">
+      <div className='mt-[50px] mr-auto ml-auto w-fit'>
+        <motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
+					Technologie
+				</motion.h1>
+
+        <motion.p className="mb-5 mt-3 text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
+          Tohle vsehcno jsou technologie ktere pouzivam, klfjdslfdkf 
+          fklsdjf sdf fsd;fj sdklfjsdlk jfkldsj fkl sdjklfj dsk f
+        </motion.p>
+
+        <TechnologyList/>
+      </div>
+
+			<div className="mt-[90px] w-[300px] md:w-[500px] mr-auto ml-auto text-center">
 				<motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
 					{data[language].contact[0]} ✌️
 				</motion.h1>
