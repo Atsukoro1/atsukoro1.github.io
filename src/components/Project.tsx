@@ -36,7 +36,7 @@ const Project = ({ name, description, technologies, imagePath }: IProps) => {
 				}}
 				className="relative cover h-[100px] w-full bg-cover bg-gradient-to-r from-cyan-500 to-blue-500 overflow-hidden"
 			>
-				<div className="bg-gradient-to-t from-slate-200 dark:from-slate-800 to-slate-200) h-[200px] absolute overflow-hidden mt-[-90px] w-[370px]"></div>
+				<div className="bg-gradient-to-t from-slate-200 dark:from-slate-800 dark:via-[#1e293bcc] to-slate-200) h-[200px] absolute overflow-hidden mt-[-90px] w-[370px]"></div>
 			</div>
 
 			<div className="p-4 mt-[-85px] overflow-hidden">

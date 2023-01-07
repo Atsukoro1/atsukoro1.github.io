@@ -112,23 +112,6 @@ function App() {
 				<p className="font-poppins mt-2 text-[15px] md:text-[20px] dark:text-gray-300 text-gray-500">
 					{data[language].welcome[3]}
 				</p>
-
-				<button
-					className={`
-          font-roboto text-blue-600 solid border-blue-600 border-2 pl-5 pb-3 pt-3 pr-5
-          transition ease-in-out duration-200 mt-8 rounded-lg font-bold inline-flex 
-          items-center hover:bg-blue-600 hover:bg-opacity-10
-        `}
-				>
-					<svg
-						className="fill-current w-4 h-4 mr-2"
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-					>
-						<path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
-					</svg>
-					<span>{data[language].welcome[4]}</span>
-				</button>
 			</motion.div>
 
 			<div
@@ -232,18 +215,6 @@ function App() {
 				/>
 
 				<Project
-					name={data[language].projects[1][0]}
-					description={data[language].projects[1][1]}
-					technologies={[
-						{
-							name: "C",
-							icon: SiC,
-						},
-					]}
-					imagePath={"project_netscrape.png"}
-				/>
-
-				<Project
 					name={data[language].projects[2][0]}
 					description={data[language].projects[2][1]}
 					technologies={[
@@ -298,6 +269,18 @@ function App() {
 					]}
 					imagePath={"project_doucovani.png"}
 				/>
+
+				<Project
+					name={data[language].projects[1][0]}
+					description={data[language].projects[1][1]}
+					technologies={[
+						{
+							name: "C",
+							icon: SiC,
+						},
+					]}
+					imagePath={"project_netscrape.png"}
+				/>
 			</div>
 
 			<div className='mt-[50px] mr-auto ml-auto w-fit'>
@@ -321,7 +304,7 @@ function App() {
 					{data[language].contact[1]}
 				</motion.p>
 
-				<div className="flex flex-grow mr-auto ml-auto w-fit mt-4 gap-5 mb-20">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mr-auto gap-5 ml-auto w-fit mt-4 mb-20">
 					<Contact text="Discord" copyText="Atsukoro1#6323" icon={SiDiscord} />
 					<Contact
 						text="Email"

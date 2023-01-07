@@ -12,12 +12,12 @@ const Technology = (props: TechnologyI<string | number>) => {
 		<motion.div
 			className={`
                 w-fit pb-1 pt-1 pr-6 pl-6 rounded-full justify-center text-slate-300 m-2 flex
-                bg-opacity-50 bg-blue-600 border-b-4 border-blue-700 border-opacity-60
+                bg-opacity-100 dark:bg-opacity-10 bg-blue-600 border-b-4 border-blue-700 border-opacity-30
             `}
 		>
 			<props.icon className="mr-2" color="white" size={24} />
 			&nbsp;
-			<label className="dark:text-white text-slate-700">{props.name}</label>
+			<label className="text-white">{props.name}</label>
 		</motion.div>
 	);
 };

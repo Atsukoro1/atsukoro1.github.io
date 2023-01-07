@@ -15,7 +15,7 @@ const Socials = () => {
 			</a>
 
 			<br />
-			
+
 			<a href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/">
 				<FontAwesomeIcon
 					href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/"

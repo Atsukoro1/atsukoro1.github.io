@@ -34,8 +34,8 @@ export default (props: PropsI) => {
 			{...(props.copyText && { onClick: onClick })}
 			className={`
 				${state === ContactState.COPIED ? "bg-green-600" : "bg-blue-600"} 
-				w-fit flex p-3 rounded-lg hover:opacity-90 hover:cursor-pointer
-				active:scale-105 ease-in-out 
+				w-full flex p-3 rounded-lg hover:opacity-90 hover:cursor-pointer
+				active:scale-105 ease-in-out text-center justify-center
 			`}
 		>
 			<props.icon color="white" size={24} />

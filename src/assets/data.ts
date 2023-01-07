@@ -36,7 +36,8 @@ const data = [
 		],
 		technologies: {
 			title: "Technologies",
-			description: "These are the technologies I use to develop my applications and public projects."
+			description:
+				"These are the technologies I use to develop my applications and public projects.",
 		},
 		contact: [
 			"Contact",
@@ -94,7 +95,8 @@ const data = [
 		],
 		technologies: {
 			title: "Technologie",
-			description: "Toto jsou technologie, které používám k vývoji svých aplikací a veřejných projektů."
+			description:
+				"Toto jsou technologie, které používám k vývoji svých aplikací a veřejných projektů.",
 		},
 		contact: [
 			"Kontakt",
