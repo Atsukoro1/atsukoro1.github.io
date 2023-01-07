@@ -302,12 +302,11 @@ function App() {
 
 			<div className='mt-[50px] mr-auto ml-auto w-fit'>
 				<motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
-					Technologie
+					{data[language].technologies.title}
 				</motion.h1>
 
 				<motion.p className="mb-5 mt-3 text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
-					Tohle vsehcno jsou technologie ktere pouzivam, klfjdslfdkf fklsdjf sdf
-					fsd;fj sdklfjsdlk jfkldsj fkl sdjklfj dsk f
+					{data[language].technologies.description}
 				</motion.p>
 
 				<TechnologyList />

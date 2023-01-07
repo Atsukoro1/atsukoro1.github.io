@@ -5,23 +5,27 @@ import { motion } from "framer-motion";
 const Socials = () => {
 	return (
 		<motion.div className="fixed bottom-0 left-7">
-			<FontAwesomeIcon
-				href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/"
-				icon={faGithub}
-				size="2x"
-				className={`text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white
+			<a href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/">
+				<FontAwesomeIcon
+					icon={faGithub}
+					size="2x"
+					className={`text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white
                transition ease-in-out duration-200`}
-			/>
+				/>
+			</a>
 
 			<br />
-
-			<FontAwesomeIcon
-				href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/"
-				icon={faLinkedin}
-				size="2x"
-				className={`text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white
+			
+			<a href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/">
+				<FontAwesomeIcon
+					href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/"
+					icon={faLinkedin}
+					size="2x"
+					className={`text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white
                transition ease-in-out duration-200`}
-			/>
+				/>
+			</a>
+
 			<div className="h-[150px] w-[2px] mb-10 bg-gray-400"></div>
 
 			<p className="font-roboto text-xl text-gray-400 -rotate-90 ml-[-45px] mb-[40px]">

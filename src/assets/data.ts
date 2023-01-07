@@ -26,14 +26,18 @@ const data = [
 				"Messenger-like application with fully working friend system, real time messaging and authentication.",
 			],
 			[
-				"Viceverse",
+				"Viceverse.cz",
 				"Website for our web services company, made with Vue and Tailwind CSS.",
 			],
 			[
-				"Doucovani ucetnictvi a prava",
-				"Website for our web services company, made with Vue and Tailwind CSS.",
+				"Douc.info",
+				"Eshop where you can buy courses and ebooks. Fully functional payment system, intuitive UI and fully editable.",
 			],
 		],
+		technologies: {
+			title: "Technologies",
+			description: "These are the technologies I use to develop my applications and public projects."
+		},
 		contact: [
 			"Contact",
 			`If you would like to discuss working on your future project or just have a chat, 
@@ -80,14 +84,18 @@ const data = [
 				"Aplikace podobná Messengeru s plně funkčním systémem přátel, zasíláním zpráv v reálném čase a ověřováním.",
 			],
 			[
-				"Viceverse",
+				"Viceverse.cz",
 				"Webové stránky pro naši společnost poskytující webové služby, vytvořené pomocí Vue a Tailwind CSS.",
 			],
 			[
-				"Doucovani ucetnictvi a prava",
-				"Website for our web services company, made with Vue and Tailwind CSS.",
+				"Douc.info",
+				"Eshop, kde si můžete zakoupit kurzy a elektronické knihy. Plně funkční platební systém, intuitivní uživatelské rozhraní a plně upravitelné.",
 			],
 		],
+		technologies: {
+			title: "Technologie",
+			description: "Toto jsou technologie, které používám k vývoji svých aplikací a veřejných projektů."
+		},
 		contact: [
 			"Kontakt",
 			`Pokud byste chtěli probrat práci na svém budoucím projektu nebo si jen popovídat, 
