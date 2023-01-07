@@ -6,6 +6,9 @@ import {
 	SiSupabase,
 	SiPostgresql,
 	SiC,
+	SiDiscord,
+	SiGmail,
+	SiTelegram,
 } from "react-icons/si";
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
@@ -20,6 +23,7 @@ import Navbar from "./components/Navbar";
 
 import data from "./assets/data";
 import TechnologyList from "./components/TechnologyList";
+import Contact from "./components/Contact";
 
 function App() {
 	const [language, setLanguage] = useState<number>(0);
@@ -318,23 +322,19 @@ function App() {
 					{data[language].contact[1]}
 				</motion.p>
 
-				<a href="mailto:dornicakkuba@gmail.com">
-					<motion.button
-						whileHover={{ scale: 1.1 }}
-						whileTap={{ scale: 0.9 }}
-						transition={{
-							type: "spring",
-							stiffness: 400,
-							damping: 17,
-							duration: 0.5,
-						}}
-						className={`
-              bg-blue-600 text-white font-roboto pt-3 pr-5 pl-5 pb-3 mb-28
-              rounded-md mt-5 hover:opacity-75 transition ease-in-out duration-200`}
-					>
-						{data[language].contact[2]}
-					</motion.button>
-				</a>
+				<div className="flex flex-grow mr-auto ml-auto w-fit mt-4 gap-5 mb-20">
+					<Contact text="Discord" copyText="Atsukoro1#6323" icon={SiDiscord} />
+					<Contact
+						text="Email"
+						href="mailto:dornicakkuba@gmail.com"
+						icon={SiGmail}
+					/>
+					<Contact
+						text="Telegram"
+						copyText="Sonaj Solitarvan"
+						icon={SiTelegram}
+					/>
+				</div>
 			</div>
 		</div>
 	);
