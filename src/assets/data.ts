@@ -52,9 +52,15 @@ const data = [
 			"Functional side of websites I do.",
 			"The visible site of the work I do.",
 			"Other things I do in my free time.",
-			"I enjoy writing complex web servers in Node.js, I've worked in libraries/frameworks like Express, Fastify, Nest.JS and others (you can find them all on my github). I also have experience with both SQL and NoSQL databases, specifically I've often worked with MongoDB, MySQL and PostgreSQL. I'm always open to try new technologies and improve the projects I'm working on.",
-			"For most of my web applications I also did the frontend. Most of the time I work with React and VueJS, I can work with classic CSS and other CSS frameworks like TailwindCSS or Bootstrap. I often use the Framer motion library with React to create beautiful smooth animations on the page.",
-			"Apart from web applications, in my free time I make terminal or desktop applications using Rust. I don't have that much experience in this language yet, but I believe that in the future I will be able to work in it as well.",
+			`I have extensive experience developing backend applications using a variety of technologies, including Node.js, Typescript, Rust, Javascript, MongoDB, Postgres, MySQL, and Neo4j.
+			I have used Node.js to build scalable server-side applications, leveraging its asynchronous, non-blocking I/O model to build efficient and performant systems. I have also utilized Typescript to add static typing and improved code maintainability to my Node.js projects.			
+			I have experience working with both SQL and NoSQL databases, including MongoDB, Postgres, and MySQL. I have used these technologies to build data-driven applications and have experience with database modeling, indexing, and optimization.
+			Finally, I have experience working with Neo4j to build applications that utilize graph data structures. I have used Neo4j to model and query complex relationships in data.`,
+			`I have experience building frontend applications using React.js, Vue.js, Typescript, Next.js, CSS, HTML, and SASS. I have used React.js and Vue.js to build dynamic and interactive user interfaces, utilizing their component-based architectures to create reusable and maintainable code.
+			I have also used Typescript to add static typing and improved code maintainability to my frontend projects, and have utilized Next.js to build server-rendered and statically generated web applications.
+			In addition to these technologies, I have experience working with CSS, HTML, and SASS to style and layout my frontend applications. I have used these technologies to create responsive and visually appealing user interfaces.
+			Finally, I have experience with SolidJS, a JavaScript library for building web applications with a functional programming style. I have used Solid to build scalable and reliable frontend applications.`,
+			`In my free time, I enjoy challenging myself by solving problems on Hackthebox to improve my cybersecurity skills. I also enjoy building applications with RUST, a programming language designed for safety and concurrency. Additionally, I like to play etterna, a rhythm game that requires quick reflexes and musical understanding. These activities not only allow me to have fun and relax, but also help me to continuously learn and improve my technical skills.`,
 			"What I do",
 		],
 	},
@@ -111,9 +117,12 @@ const data = [
 			"Funkční stránka webových stránek, které dělám.",
 			"Viditelné místo mé práce.",
 			"Další věci, které dělám ve volném čase.",
-			"Baví mě psát komplexní webové servery v Node.js, pracoval jsem na knihovnách/frameworcích jako Express, Fastify, Nest.JS a dalších (všechny najdete na mém githubu). Mám také zkušenosti s databázemi SQL i NoSQL, konkrétně jsem často pracoval s MongoDB, MySQL a PostgreSQL. Jsem vždy otevřený zkoušení nových technologií a vylepšování projektů, na kterých pracuji.",
-			"U většiny svých webových aplikací jsem dělal i frontend. Většinou pracuji s Reactem a VueJS, umím pracovat i s klasickým CSS a dalšími CSS frameworky jako TailwindCSS nebo Bootstrap. Často používám knihovnu Framer motion s Reactem, abych na stránce vytvořil krásné plynulé animace.",
-			"Kromě webových aplikací ve volném čase vytvářím terminálové nebo desktopové aplikace pomocí Rustu. S tímto jazykem zatím nemám tolik zkušeností, ale věřím, že v budoucnu budu schopen pracovat i v něm.",
+			`Mám rozsáhlé zkušenosti s vývojem backendových aplikací pomocí různých technologií, včetně Node.js, Typescriptu, Rustu, Javascriptu, MongoDB, Postgresu, MySQL a Neo4j. Používal jsem Node.js k vytváření škálovatelných aplikací na straně serveru, přičemž jsem využíval jeho asynchronní, neblokující I/O model k vytváření efektivních a výkonných systémů. Využil jsem také Typescript k přidání statického typování a zlepšení udržovatelnosti kódu do svých projektů Node.js. Mám zkušenosti s prací s databázemi SQL i NoSQL, včetně MongoDB, Postgres a MySQL. Tyto technologie jsem používal k vytváření aplikací založených na datech a mám zkušenosti s modelováním, indexováním a optimalizací databází. V neposlední řadě mám zkušenosti s prací s Neo4j při vytváření aplikací využívajících grafové datové struktury. Používal jsem Neo4j k modelování a dotazování složitých vztahů v datech.`,
+			`Mám zkušenosti s vytvářením frontendových aplikací pomocí React.js, Vue.js, Typescript, Next.js, CSS, HTML a SASS. React.js a Vue.js jsem používal k vytváření dynamických a interaktivních uživatelských rozhraní, přičemž jsem využíval jejich architekturu založenou na komponentách k vytváření opakovaně použitelného a udržovatelného kódu.
+			Používal jsem také Typescript k přidání statického psaní a lepší udržovatelnosti kódu do svých frontendových projektů a využíval jsem Next.js k vytváření serverově vykreslovaných a staticky generovaných webových aplikací.
+			Kromě těchto technologií mám zkušenosti s prací s jazyky CSS, HTML a SASS pro stylování a rozvržení svých frontendových aplikací. Pomocí těchto technologií jsem vytvořil responzivní a vizuálně atraktivní uživatelská rozhraní.
+			V neposlední řadě mám zkušenosti se SolidJS, knihovnou JavaScriptu pro tvorbu webových aplikací ve stylu funkcionálního programování. Solid jsem použil k vytvoření škálovatelných a spolehlivých frontendových aplikací.`,
+			"Ve volném čase se rád věnuji řešení problémů na Hacktheboxu, abych zlepšil své dovednosti v oblasti kybernetické bezpečnosti. Baví mě také vytvářet aplikace pomocí programovacího jazyka RUST, který je navržen pro bezpečnost a souběžnost. Kromě toho rád hraji etternu, rytmickou hru, která vyžaduje rychlé reflexy a hudební porozumění. Tyto činnosti mi umožňují nejen se bavit a relaxovat, ale také mi pomáhají neustále se učit a zlepšovat své technické dovednosti.",
 			"Na čem pracuji",
 		],
 	},

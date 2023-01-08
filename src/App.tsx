@@ -9,7 +9,14 @@ import {
 	SiDiscord,
 	SiGmail,
 	SiTelegram,
+	SiServerless,
 } from "react-icons/si";
+import {
+	MdComputer
+} from 'react-icons/md';
+import {
+	GiComputerFan
+} from 'react-icons/gi';
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
 import { useState } from "react";
@@ -120,6 +127,7 @@ function App() {
 			>
 				<div className="text-left">
 					<ActivityCard
+						icon={SiServerless}
 						onClick={() => setSelectedActivityCard(0)}
 						selected={selectedActivityCard === 0}
 						title={data[language].whatIDo[0]}
@@ -134,6 +142,7 @@ function App() {
 					)}
 
 					<ActivityCard
+						icon={MdComputer}
 						onClick={() => setSelectedActivityCard(1)}
 						selected={selectedActivityCard === 1}
 						title={data[language].whatIDo[1]}
@@ -148,6 +157,7 @@ function App() {
 					)}
 
 					<ActivityCard
+						icon={GiComputerFan}
 						onClick={() => setSelectedActivityCard(2)}
 						selected={selectedActivityCard === 2}
 						title={data[language].whatIDo[2]}
