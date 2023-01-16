@@ -31,6 +31,7 @@ import Navbar from "./components/Navbar";
 import data from "./assets/data";
 import TechnologyList from "./components/TechnologyList";
 import Contact from "./components/Contact";
+import Tabs from "./components/Tabs";
 
 function App() {
 	const [language, setLanguage] = useState<number>(0);
@@ -110,7 +111,7 @@ function App() {
 				<p
 					className="font-poppins font-bold md:text-[60px] text-[25px] mt-[-7px] text-blue-600"
 					style={{
-						textShadow: `0 0 2px #2563eb, 0 0 40px #2563eb`,
+						textShadow: "0 0 2px #2563eb, 0 0 40px #2563eb",
 					}}
 				>
 					{data[language].welcome[2]}
@@ -301,6 +302,23 @@ function App() {
 				<motion.p className="mb-5 mt-3 text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
 					{data[language].technologies.description}
 				</motion.p>
+
+				<Tabs
+					tabs={[
+						{
+							title: "Jazyky",
+							element: <h1>Jazyky</h1>
+						},
+						{
+							title: "Databaze",
+							element: <h1>databaze</h1>
+						},
+						{
+							title: "Nastroje",
+							element: <h1>Nastroje</h1>
+						}
+					]}
+				/>
 
 				<TechnologyList />
 			</div>
