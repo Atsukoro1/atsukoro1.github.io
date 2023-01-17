@@ -9,7 +9,7 @@ interface IProps {
 	description: string;
 	projectCount: number;
 	selected: boolean;
-	icon: IconType,
+	icon: IconType;
 	onClick: () => void;
 }
 
@@ -60,10 +60,7 @@ const ActivityCard = (props: IProps) => {
 			</motion.div>
 
 			<motion.div>
-				<props.icon 
-					className='float-right text-blue-600 mt-3 mr-3'
-					size={30}
-				/>
+				<props.icon className='float-right text-blue-600 mt-3 mr-3' size={30} />
 			</motion.div>
 		</motion.div>
 	);

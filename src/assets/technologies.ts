@@ -1,11 +1,7 @@
 import { TechnologyI } from "../components/Technology";
 import {
-	SiBootstrap,
 	SiCss3,
 	SiDocker,
-	SiExpress,
-	SiFastify,
-	SiFramer,
 	SiGit,
 	SiGithub,
 	SiHtml5,
@@ -14,20 +10,18 @@ import {
 	SiMysql,
 	SiNeo4J,
 	SiNextdotjs,
-	SiNodedotjs,
+	SiNuxtdotjs,
 	SiPhp,
 	SiPostgresql,
+	SiPostman,
 	SiReact,
 	SiRust,
-	SiSass,
 	SiSolidity,
-	SiStripe,
 	SiTypescript,
-	SiVuedotjs,
-	SiYarn,
+	SiVuedotjs
 } from "react-icons/si";
 
-const technologies: TechnologyI<string>[] = [
+export const databaseTechnologies: TechnologyI<string>[] = [
 	{
 		name: "PostgreSQL",
 		icon: SiPostgresql,
@@ -44,10 +38,28 @@ const technologies: TechnologyI<string>[] = [
 		name: "MySQL",
 		icon: SiMysql,
 	},
+]
+
+export const toolTechnologies: TechnologyI<string>[] = [
 	{
-		name: "NodeJS",
-		icon: SiNodedotjs,
+		name: "Git",
+		icon: SiGit,
 	},
+	{
+		name: "Docker",
+		icon: SiDocker
+	},
+	{
+		name: "Github",
+		icon: SiGithub
+	},
+	{
+		name: "Postman",
+		icon: SiPostman
+	}
+];
+
+export const languageTechnologies: TechnologyI<string>[] = [
 	{
 		name: "Typescript",
 		icon: SiTypescript,
@@ -69,65 +81,34 @@ const technologies: TechnologyI<string>[] = [
 		icon: SiCss3,
 	},
 	{
-		name: "Sass",
-		icon: SiSass,
-	},
+		name: "PHP",
+		icon: SiPhp
+	}
+];
+
+export const frameworksTechnologies: TechnologyI<string>[] = [
 	{
 		name: "React",
-		icon: SiReact,
-	},
-	{
-		name: "NextJS",
-		icon: SiNextdotjs,
-	},
-	{
-		name: "SolidJS",
-		icon: SiSolidity,
+		icon: SiReact
 	},
 	{
 		name: "Vue",
-		icon: SiVuedotjs,
+		icon: SiVuedotjs
 	},
 	{
-		name: "Docker",
-		icon: SiDocker,
+		name: "Nuxt.js",
+		icon: SiNuxtdotjs
 	},
 	{
-		name: "Github",
-		icon: SiGithub,
+		name: "Next.js",
+		icon: SiNextdotjs
 	},
 	{
-		name: "ExpressJS",
-		icon: SiExpress,
+		name: "Solid.js",
+		icon: SiSolidity
 	},
 	{
-		name: "Fastify",
-		icon: SiFastify,
-	},
-	{
-		name: "Git",
-		icon: SiGit,
-	},
-	{
-		name: "Php",
-		icon: SiPhp,
-	},
-	{
-		name: "Yarn",
-		icon: SiYarn,
-	},
-	{
-		name: "Bootstrap",
-		icon: SiBootstrap,
-	},
-	{
-		name: "Stripe",
-		icon: SiStripe,
-	},
-	{
-		name: "Framer",
-		icon: SiFramer,
-	},
-];
-
-export default technologies;
+		name: "React Native",
+		icon: SiReact
+	}
+]

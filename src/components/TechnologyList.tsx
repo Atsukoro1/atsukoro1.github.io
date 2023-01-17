@@ -1,21 +1,22 @@
-import technologies from "../assets/technologies";
-import Technology from "./Technology";
+import Technology, { TechnologyI } from "./Technology"
 
-const TechnologyList = () => {
-	return (
-		<div className="grid grid-cols-2 md:grid-cols-3 grid-flow-dense">
-			{technologies.map((el, key) => {
-				return (
-					<Technology
-						key={key}
-						name={el.name}
-						icon={el.icon}
-						color={el.color}
-					/>
-				);
-			})}
-		</div>
-	);
-};
+interface Props {
+    data: TechnologyI<string>[]
+}
 
-export default TechnologyList;
+export default ({ data }: Props) => {
+    return (
+        <div className="grid grid-cols-2">
+            {data.map((el, index) => {
+                return (
+                    <Technology
+                        icon={el.icon}
+                        name={el.name}
+                        color={el.color}
+                        key={index as keyof typeof Technology}
+                    />
+                )
+            })}
+        </div>
+    )
+}

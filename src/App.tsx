@@ -11,12 +11,8 @@ import {
 	SiTelegram,
 	SiServerless,
 } from "react-icons/si";
-import {
-	MdComputer
-} from 'react-icons/md';
-import {
-	GiComputerFan
-} from 'react-icons/gi';
+import { MdComputer } from "react-icons/md";
+import { GiComputerFan } from "react-icons/gi";
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
 import { useState } from "react";
@@ -32,6 +28,7 @@ import data from "./assets/data";
 import TechnologyList from "./components/TechnologyList";
 import Contact from "./components/Contact";
 import Tabs from "./components/Tabs";
+import { databaseTechnologies, frameworksTechnologies, languageTechnologies, toolTechnologies } from "./assets/technologies";
 
 function App() {
 	const [language, setLanguage] = useState<number>(0);
@@ -306,21 +303,23 @@ function App() {
 				<Tabs
 					tabs={[
 						{
-							title: "Jazyky",
-							element: <h1>Jazyky</h1>
+							title: data[language].technology[0],
+							element: <TechnologyList data={languageTechnologies}/>,
 						},
 						{
-							title: "Databaze",
-							element: <h1>databaze</h1>
+							title: data[language].technology[1],
+							element: <TechnologyList data={databaseTechnologies}/>,
 						},
 						{
-							title: "Nastroje",
-							element: <h1>Nastroje</h1>
+							title: data[language].technology[2],
+							element: <TechnologyList data={toolTechnologies}/>,
+						},
+						{
+							title: data[language].technology[3],
+							element: <TechnologyList data={frameworksTechnologies}/>
 						}
 					]}
 				/>
-
-				<TechnologyList />
 			</div>
 
 			<div className="mt-[90px] w-[300px] md:w-[500px] mr-auto ml-auto text-center">
