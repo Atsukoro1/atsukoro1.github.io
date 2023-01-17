@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Socials = () => {
 	return (
-		<motion.div className="fixed bottom-0 left-7">
+		<motion.div>
 			<a href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/">
 				<FontAwesomeIcon
 					icon={faGithub}

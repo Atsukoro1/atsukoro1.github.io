@@ -5,7 +5,7 @@ import { IProps } from "./LanguageSwitch";
 
 const Navbar = ({ onLanguageChange }: IProps) => {
 	return (
-		<nav className="bg-white dark:bg-slate-900">
+		<nav>
 			<div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
 				<div className="fixed flex h-16 items-center">
 					<div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">

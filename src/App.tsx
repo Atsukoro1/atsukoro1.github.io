@@ -46,8 +46,8 @@ function App() {
 			}}
 			className="bg-white dark:bg-slate-900"
 		>
-			<div className="none md:block fixed top-0">
-				<ProgressLine />
+			<div className="none fixed w-full h-[65px] z-10 backdrop-blur-sm bg:white/10 dark:bg-black/10 top-0">
+				<span className="hidden sm:block"><ProgressLine /></span>
 
 				{scrollYProgress.get() < 2 && (
 					<Navbar
@@ -57,7 +57,7 @@ function App() {
 					/>
 				)}
 
-				<Socials />
+				<span className="fixed top-[900%] left-8"><Socials/></span>
 			</div>
 
 			<motion.div
@@ -170,7 +170,7 @@ function App() {
 					)}
 				</div>
 
-				<div className="text-left ml-[100px]">
+				<div className="text-left w-[80%] mx-auto lg:mx-0 lg:w-full lg:ml-[100px]">
 					{width > 800 && (
 						<>
 							<ActivityContent
@@ -292,11 +292,11 @@ function App() {
 			</div>
 
 			<div className='mt-[50px] mr-auto ml-auto w-fit'>
-				<motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
+				<motion.h1 className="text-blue-600 text-center md:text-left font-poppins font-bold text-[27px]">
 					{data[language].technologies.title}
 				</motion.h1>
 
-				<motion.p className="mb-5 mt-3 text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
+				<motion.p className="mb-5 mt-3 mx-auto md:mx-1 text-center md:text-left text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
 					{data[language].technologies.description}
 				</motion.p>
 

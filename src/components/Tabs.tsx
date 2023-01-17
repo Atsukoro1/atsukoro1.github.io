@@ -23,7 +23,7 @@ const Tab = ({ title, onClick, selected }: Tab) => {
 	return (
 		<div
 			className={`
-                bg-blue-600 m-1.5 rounded-lg p-2 text-white
+                bg-blue-600 m-1.5 w-fit text-center rounded-lg p-1 md:p-2 text-white
                 ${active && "ring-4 ring-blue-600 ring-opacity-40 bg-opacity-100"}
                 ${!active && "bg-opacity-40"}
             `}
@@ -43,7 +43,7 @@ export default ({ tabs }: TabsProps) => {
 
 	return (
 		<>
-			<div className="flex bg-blue-600 bg-opacity-30 p-2 rounded-2xl w-fit hover:cursor-pointer">
+			<div className="flex bg-blue-600 bg-opacity-30 p-1 md:p-2 rounded-2xl w-fit hover:cursor-pointer">
 				{tabs.map((el, index) => {
 					return (
 						<Tab
