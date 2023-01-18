@@ -10,6 +10,9 @@ import {
 	SiGmail,
 	SiTelegram,
 	SiServerless,
+	SiFramer,
+	SiFontawesome,
+	SiTypescript,
 } from "react-icons/si";
 import { MdComputer } from "react-icons/md";
 import { GiComputerFan } from "react-icons/gi";
@@ -200,7 +203,7 @@ function App() {
 
 			<div
 				className={`mt-[50px] mr-auto ml-auto w-[380px] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
-           2xl:w-[1200px] 2xl:grid-cols-3 grid-gap-4`}
+           2xl:w-[1200px] 2xl:grid-cols-3 gap-10`}
 			>
 				<Project
 					name={data[language].projects[0][0]}
@@ -216,9 +219,14 @@ function App() {
 						},
 						{
 							name: "Tailwind",
-							icon: SiTailwindcss,
+							icon: SiTailwindcss, 
 						},
+						{
+							name: "Framer",
+							icon: SiFramer
+						}
 					]}
+					href="https://atsukoro1.github.io/"
 					imagePath={"project_portfolio.png"}
 				/>
 
@@ -234,8 +242,17 @@ function App() {
 							name: "React",
 							icon: SiReact,
 						},
+						{
+							name: "Tailwind",
+							icon: SiTailwindcss
+						},
+						{
+							name: "Framer",
+							icon: SiFramer
+						}
 					]}
 					imagePath={"project_contalk.png"}
+					href="https://github.com/Atsukoro1/Contalk"
 				/>
 
 				<Project
@@ -250,8 +267,18 @@ function App() {
 							name: "Tailwind",
 							icon: SiTailwindcss,
 						},
+						{
+
+							name: "Typescript",
+							icon: SiTypescript
+						},
+						{
+							name: "Framer",
+							icon: SiFramer
+						}
 					]}
 					imagePath={"project_viceverse.png"}
+					href="https://www.viceverse.cz"
 				/>
 
 				<Project
@@ -275,6 +302,7 @@ function App() {
 							icon: SiSupabase,
 						},
 					]}
+					href="https://www.douc.info"
 					imagePath={"project_doucovani.png"}
 				/>
 
@@ -287,6 +315,7 @@ function App() {
 							icon: SiC,
 						},
 					]}
+					href="https://github.com/Atsukoro1/netscrape"
 					imagePath={"project_netscrape.png"}
 				/>
 			</div>

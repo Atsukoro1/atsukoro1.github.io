@@ -94,7 +94,7 @@ const LanguageSwitch = ({ onLanguageChange }: IProps) => {
 				<Tab
 					className={() =>
 						classNames(
-							"w-full rounded-lg py-2.5 h-7 w-10 text-sm font-medium leading-5 text-white",
+							"rounded-lg py-2.5 h-7 w-10 text-sm font-medium leading-5 text-white",
 							"ring-slate-700 ring-opacity-60 ring-offset-2 ring-offset-white/[0.09] focus:outline-none focus:ring-2",
 
 							language === SelectedLanguage.ENGLISH

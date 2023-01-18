@@ -64,12 +64,7 @@ const data = [
 			I like to play etterna, a rhythm game that requires quick reflexes and musical understanding. These activities not only allow me to have fun and relax, but also help me to continuously learn and improve my technical skills.`,
 			"What I do",
 		],
-		technology: [
-			"Languages",
-			"Databases",
-			"Tools",
-			"Frameworks"
-		]
+		technology: ["Languages", "Databases", "Tools", "Frameworks"],
 	},
 	{
 		welcome: [
@@ -133,12 +128,7 @@ const data = [
 			"Ve volném čase se rád věnuji řešení problémů na Hacktheboxu, abych zlepšil své dovednosti v oblasti kybernetické bezpečnosti. Baví mě také vytvářet aplikace pomocí programovacího jazyka RUST, který je navržen pro bezpečnost a souběžnost. Kromě toho rád hraji etternu, rytmickou hru, která vyžaduje rychlé reflexy a hudební porozumění. Tyto činnosti mi umožňují nejen se bavit a relaxovat, ale také mi pomáhají neustále se učit a zlepšovat své technické dovednosti.",
 			"Na čem pracuji",
 		],
-		technology: [
-			"Jazyky",
-			"Databáze",
-			"Nástroje",
-			"Frameworky"
-		]
+		technology: ["Jazyky", "Databáze", "Nástroje", "Frameworky"],
 	},
 ];
 

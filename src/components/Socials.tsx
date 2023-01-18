@@ -26,7 +26,7 @@ const Socials = () => {
 				/>
 			</a>
 
-			<div className="h-[150px] w-[2px] mb-10 bg-gray-400"/>
+			<div className="h-[150px] w-[2px] mb-10 bg-gray-400" />
 
 			<p className="font-roboto text-xl text-gray-400 -rotate-90 ml-[-45px] mb-[40px]">
 				Socials

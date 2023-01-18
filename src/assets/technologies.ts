@@ -18,7 +18,7 @@ import {
 	SiRust,
 	SiSolidity,
 	SiTypescript,
-	SiVuedotjs
+	SiVuedotjs,
 } from "react-icons/si";
 
 export const databaseTechnologies: TechnologyI<string>[] = [
@@ -38,7 +38,7 @@ export const databaseTechnologies: TechnologyI<string>[] = [
 		name: "MySQL",
 		icon: SiMysql,
 	},
-]
+];
 
 export const toolTechnologies: TechnologyI<string>[] = [
 	{
@@ -47,16 +47,16 @@ export const toolTechnologies: TechnologyI<string>[] = [
 	},
 	{
 		name: "Docker",
-		icon: SiDocker
+		icon: SiDocker,
 	},
 	{
 		name: "Github",
-		icon: SiGithub
+		icon: SiGithub,
 	},
 	{
 		name: "Postman",
-		icon: SiPostman
-	}
+		icon: SiPostman,
+	},
 ];
 
 export const languageTechnologies: TechnologyI<string>[] = [
@@ -82,33 +82,33 @@ export const languageTechnologies: TechnologyI<string>[] = [
 	},
 	{
 		name: "PHP",
-		icon: SiPhp
-	}
+		icon: SiPhp,
+	},
 ];
 
 export const frameworksTechnologies: TechnologyI<string>[] = [
 	{
 		name: "React",
-		icon: SiReact
+		icon: SiReact,
 	},
 	{
 		name: "Vue",
-		icon: SiVuedotjs
+		icon: SiVuedotjs,
 	},
 	{
 		name: "Nuxt.js",
-		icon: SiNuxtdotjs
+		icon: SiNuxtdotjs,
 	},
 	{
 		name: "Next.js",
-		icon: SiNextdotjs
+		icon: SiNextdotjs,
 	},
 	{
 		name: "Solid.js",
-		icon: SiSolidity
+		icon: SiSolidity,
 	},
 	{
 		name: "React Native",
-		icon: SiReact
-	}
-]
+		icon: SiReact,
+	},
+];

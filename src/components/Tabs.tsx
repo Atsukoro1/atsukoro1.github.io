@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
 interface Tab {
@@ -21,16 +22,25 @@ const Tab = ({ title, onClick, selected }: Tab) => {
 	}, [selected]);
 
 	return (
-		<div
-			className={`
-                bg-blue-600 m-1.5 w-fit text-center rounded-lg p-1 md:p-2 text-white
-                ${active && "ring-4 ring-blue-600 ring-opacity-40 bg-opacity-100"}
-                ${!active && "bg-opacity-40"}
-            `}
+		<AnimatePresence>
+			<motion.div
+			initial={{ y: 10, opacity: 0 }}
+			animate={{ y: 0, opacity: 1 }}
+			exit={{ y: -10, opacity: 0 }}
+			transition={{ duration: 0.2 }}
 			onClickCapture={onClick}
 		>
-			{title}
-		</div>
+			<motion.div className={`
+                w-fit text-center rounded-tl-lg rounded-tr-lg p-1 md:p-2 text-white mr-2 ml-2
+				${active && "bg-opacity-30"}
+                ${!active && "bg-opacity-20"}
+            `}>
+				{title}
+			</motion.div>
+
+			{selected && <motion.div layoutId="underline" className="bg-blue-600 h-0.5 w-full"/>}
+		</motion.div>
+		</AnimatePresence>
 	);
 };
 
@@ -43,7 +53,7 @@ export default ({ tabs }: TabsProps) => {
 
 	return (
 		<>
-			<div className="flex bg-blue-600 bg-opacity-30 p-1 md:p-2 rounded-2xl w-fit hover:cursor-pointer">
+			<div className="flex pr-3 pt-3 pl-3 w-[420px] bg-blue-600 bg-opacity-20 rounded-tr-lg rounded-tl-xl hover:cursor-pointer">
 				{tabs.map((el, index) => {
 					return (
 						<Tab
@@ -57,9 +67,9 @@ export default ({ tabs }: TabsProps) => {
 				})}
 			</div>
 
-            <div className="bg-blue-600 bg-opacity-10 p-2 rounded-2xl w-fit mt-5">
-                {element}
-            </div>
+			<div className="bg-blue-600 bg-opacity-10 w-[420px]">
+				{element}
+			</div>
 		</>
 	);
 };
