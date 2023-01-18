@@ -29,6 +29,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "react-scripts": "5.0.1",
+    "resize-observer-polyfill": "^1.5.1",
     "typescript": "^4.8.2",
     "web-vitals": "^2.1.4"
   },
