@@ -53,7 +53,7 @@ export default ({ tabs }: TabsProps) => {
 
 	return (
 		<>
-			<div className="flex pr-3 pt-3 pl-3 w-[420px] bg-blue-600 bg-opacity-20 rounded-tr-lg rounded-tl-xl hover:cursor-pointer">
+			<div className="flex pr-3 pt-3 pl-3 w-[420px] blue-400 dark:bg-blue-600 bg-opacity-20 rounded-tr-lg rounded-tl-xl hover:cursor-pointer">
 				{tabs.map((el, index) => {
 					return (
 						<Tab

@@ -1,36 +1,35 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
+import { IconType } from "react-icons";
 
-const Socials = () => {
+interface Social {
+	icon: IconType;
+	href: string;
+}
+
+interface Props {
+	socials: Social[]
+}
+
+const Socials = ({ socials }: Props) => {
 	return (
 		<motion.div>
-			<a href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/">
-				<FontAwesomeIcon
-					icon={faGithub}
-					size="2x"
-					className={`text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white
-               transition ease-in-out duration-200`}
-				/>
-			</a>
+			{socials.map((el, index) => {
+				return (
+					<span className="block" key={index as keyof typeof Socials}>
+						<a href={el.href}>
+							<el.icon 
+								className="text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white transition ease-in-out duration-200" 
+								size={35}
+							/>
+						</a>
 
-			<br />
+						<br />
+					</span>
+				)
+			})}
 
-			<a href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/">
-				<FontAwesomeIcon
-					href="https://www.linkedin.com/in/jakub-dornicak-b6953423b/"
-					icon={faLinkedin}
-					size="2x"
-					className={`text-gray-400 mb-2 ml-[-12px] hover:cursor-pointer hover:text-white
-               transition ease-in-out duration-200`}
-				/>
-			</a>
-
-			<div className="h-[150px] w-[2px] mb-10 bg-gray-400" />
-
-			<p className="font-roboto text-xl text-gray-400 -rotate-90 ml-[-45px] mb-[40px]">
-				Socials
-			</p>
+			<div className="h-[150px] w-[2px] bg-gray-400" />
 		</motion.div>
 	);
 };

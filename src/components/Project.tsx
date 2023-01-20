@@ -26,7 +26,7 @@ const Project = ({
 }: IProps) => {
 	return (
 		<motion.div
-			className="bg-slate-200 dark:bg-slate-800 w-[370px] rounded-lg mb-10 overflow-hidden hover:cursor-pointer h-full"
+			className="bg-slate-200 dark:bg-slate-800 w-[370px] rounded-lg overflow-hidden hover:cursor-pointer h-full"
 			whileHover={{
 				translateY: -5,
 			}}

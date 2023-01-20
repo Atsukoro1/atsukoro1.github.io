@@ -18,11 +18,12 @@ import { MdComputer } from "react-icons/md";
 import { GiComputerFan } from "react-icons/gi";
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 import ActivityContent from "./components/ActivityContent";
 import ProgressLine from "./components/ProgressLine";
 import ActivityCard from "./components/ActivityCard";
+import ThreeDModel from './components/3DModel';
 import Socials from "./components/Socials";
 import Project from "./components/Project";
 import Navbar from "./components/Navbar";
@@ -49,9 +50,7 @@ function App() {
 			}}
 			className="bg-white dark:bg-slate-900"
 		>
-			<div className="none fixed w-full h-[65px] z-10 backdrop-blur-sm bg:white/10 dark:bg-black/10 top-0">
-				<span className="hidden sm:block"><ProgressLine /></span>
-
+			<div className="none sticky w-full h-[65px] z-10 backdrop-blur-sm bg:white/10 dark:bg-black/10 top-0">
 				{scrollYProgress.get() < 2 && (
 					<Navbar
 						onLanguageChange={(lang) => {
@@ -59,8 +58,6 @@ function App() {
 						}}
 					/>
 				)}
-
-				<span className="fixed top-[900%] left-8"><Socials/></span>
 			</div>
 
 			<motion.div
@@ -136,7 +133,7 @@ function App() {
 						projectCount={12}
 					/>
 
-					{width < 800 && selectedActivityCard === 0 && (
+					{width < 600 && selectedActivityCard === 0 && (
 						<>
 							<ActivityContent selectedItem={0} selectedLang={language} />
 						</>
@@ -151,7 +148,7 @@ function App() {
 						projectCount={20}
 					/>
 
-					{width < 800 && selectedActivityCard === 1 && (
+					{width < 600 && selectedActivityCard === 1 && (
 						<>
 							<ActivityContent selectedItem={1} selectedLang={language} />
 						</>
@@ -166,7 +163,7 @@ function App() {
 						projectCount={10}
 					/>
 
-					{width < 800 && selectedActivityCard === 2 && (
+					{width < 600 && selectedActivityCard === 2 && (
 						<>
 							<ActivityContent selectedItem={2} selectedLang={language} />
 						</>
@@ -174,7 +171,7 @@ function App() {
 				</div>
 
 				<div className="text-left w-[80%] mx-auto lg:mx-0 lg:w-full lg:ml-[100px]">
-					{width > 800 && (
+					{width > 600 && (
 						<>
 							<ActivityContent
 								selectedItem={selectedActivityCard}
@@ -202,7 +199,7 @@ function App() {
 			</div>
 
 			<div
-				className={`mt-[50px] mr-auto ml-auto w-[380px] grid grid-cols-1 md:grid-cols-2 md:w-[800px]
+				className={`mt-[50px] mr-auto ml-auto w-[380px] grid grid-cols-1 md:grid-cols-2 md:w-[720px]
            2xl:w-[1200px] 2xl:grid-cols-3 gap-10`}
 			>
 				<Project
@@ -374,6 +371,8 @@ function App() {
 					/>
 				</div>
 			</div>
+
+			<ThreeDModel/>
 		</div>
 	);
 }
