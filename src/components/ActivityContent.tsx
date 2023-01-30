@@ -53,22 +53,21 @@ const ActivityContent = ({ selectedItem, selectedLang }: IProps) => {
 	];
 
 	return (
-		<motion.div className='mb-8'>
-			<motion.h4
-				initial={{
-					translateY: 100,
-				}}
-				animate={{
-					translateY: 0,
-				}}
-				transition={{
-					type: "spring",
-					duration: 200,
-					bounce: 100,
-					stiffness: 300,
-				}}
-				className='text-gray-400 font-roboto text-[15px]'
-			>
+		<motion.div 
+			initial={{
+				translateY: 100,
+			}}
+			animate={{
+				translateY: 0,
+			}}
+			transition={{
+				type: "spring",
+				duration: 200,
+				bounce: 100,
+				stiffness: 300,
+			}}
+		>
+			<motion.h4 className='text-gray-400 font-roboto text-[15px]'>
 				{data[lang].activityContent[9]}
 			</motion.h4>
 

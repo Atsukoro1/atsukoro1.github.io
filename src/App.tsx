@@ -11,28 +11,21 @@ import {
 	SiTelegram,
 	SiServerless,
 	SiFramer,
-	SiFontawesome,
 	SiTypescript,
 } from "react-icons/si";
 import { MdComputer } from "react-icons/md";
 import { GiComputerFan } from "react-icons/gi";
 import { motion, useScroll } from "framer-motion";
 import useViewPort from "./hooks/useViewPort";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 import ActivityContent from "./components/ActivityContent";
-import ProgressLine from "./components/ProgressLine";
 import ActivityCard from "./components/ActivityCard";
-import ThreeDModel from './components/3DModel';
-import Socials from "./components/Socials";
 import Project from "./components/Project";
 import Navbar from "./components/Navbar";
 
 import data from "./assets/data";
-import TechnologyList from "./components/TechnologyList";
 import Contact from "./components/Contact";
-import Tabs from "./components/Tabs";
-import { databaseTechnologies, frameworksTechnologies, languageTechnologies, toolTechnologies } from "./assets/technologies";
 
 function App() {
 	const [language, setLanguage] = useState<number>(0);
@@ -61,7 +54,7 @@ function App() {
 			</div>
 
 			<motion.div
-				className="ml-auto mrt- mr-auto md:w-[1000px] w-[350px] text-center md:text-left"
+				className="p-0 md:p-10 lg:p-0 ml-auto mrt- mr-auto md:w-[800px] lg:w-[1000px] w-[370px] text-center md:text-left"
 				initial={{ rotate: 45 }}
 				animate={{ rotate: 0, scale: 1 }}
 				transition={{
@@ -99,14 +92,14 @@ function App() {
 				<label
 					className={`
           text-dark dark:text-white font-poppins font-bold md:text-[60px] 
-          text-[30px]
+          text-[40px]
         `}
 				>
 					{data[language].welcome[1]}
 				</label>
 
 				<p
-					className="font-poppins font-bold md:text-[60px] text-[25px] mt-[-7px] text-blue-600"
+					className="font-poppins font-bold text-[27px] md:text-[40px] lg:text-[55px] mt-[-7px] text-blue-600"
 					style={{
 						textShadow: "0 0 2px #2563eb, 0 0 40px #2563eb",
 					}}
@@ -121,7 +114,7 @@ function App() {
 
 			<div
 				className={`grid grid-cols-1 md:grid-cols-2 w-full lg:w-[1000px] 
-        mr-auto ml-auto mt-40 md:w-[700px]`}
+        mr-auto ml-auto mt-40 md:w-[700px] p-10 md:p-0`}
 			>
 				<div className="text-left">
 					<ActivityCard
@@ -133,10 +126,10 @@ function App() {
 						projectCount={12}
 					/>
 
-					{width < 600 && selectedActivityCard === 0 && (
-						<>
+					{width < 800 && selectedActivityCard === 0 && (
+						<div className="mt-5">
 							<ActivityContent selectedItem={0} selectedLang={language} />
-						</>
+						</div>
 					)}
 
 					<ActivityCard
@@ -148,10 +141,10 @@ function App() {
 						projectCount={20}
 					/>
 
-					{width < 600 && selectedActivityCard === 1 && (
-						<>
+					{width < 800 && selectedActivityCard === 1 && (
+						<div className="mt-5">
 							<ActivityContent selectedItem={1} selectedLang={language} />
-						</>
+						</div>
 					)}
 
 					<ActivityCard
@@ -163,21 +156,21 @@ function App() {
 						projectCount={10}
 					/>
 
-					{width < 600 && selectedActivityCard === 2 && (
-						<>
+					{width < 800 && selectedActivityCard === 2 && (
+						<div className="mt-5">
 							<ActivityContent selectedItem={2} selectedLang={language} />
-						</>
+						</div>
 					)}
 				</div>
 
-				<div className="text-left w-[80%] mx-auto lg:mx-0 lg:w-full lg:ml-[100px]">
-					{width > 600 && (
-						<>
+				<div className="text-left w-[100%] mx-auto lg:mx-0 lg:w-full lg:ml-[100px]">
+					{width > 800 && (
+						<div className="mt-5">
 							<ActivityContent
 								selectedItem={selectedActivityCard}
 								selectedLang={language}
 							/>
-						</>
+						</div>
 					)}
 				</div>
 			</div>
@@ -317,37 +310,6 @@ function App() {
 				/>
 			</div>
 
-			<div className='mt-[50px] mr-auto ml-auto w-fit'>
-				<motion.h1 className="text-blue-600 text-center md:text-left font-poppins font-bold text-[27px]">
-					{data[language].technologies.title}
-				</motion.h1>
-
-				<motion.p className="mb-5 mt-3 mx-auto md:mx-1 text-center md:text-left text-slate-500 md:mr-0 md:ml-0 md:text-xl table w-[310px] md:w-[522px] dark:text-slate-400">
-					{data[language].technologies.description}
-				</motion.p>
-
-				<Tabs
-					tabs={[
-						{
-							title: data[language].technology[0],
-							element: <TechnologyList data={languageTechnologies}/>,
-						},
-						{
-							title: data[language].technology[1],
-							element: <TechnologyList data={databaseTechnologies}/>,
-						},
-						{
-							title: data[language].technology[2],
-							element: <TechnologyList data={toolTechnologies}/>,
-						},
-						{
-							title: data[language].technology[3],
-							element: <TechnologyList data={frameworksTechnologies}/>
-						}
-					]}
-				/>
-			</div>
-
 			<div className="mt-[90px] w-[300px] md:w-[500px] mr-auto ml-auto text-center">
 				<motion.h1 className="text-blue-600 font-poppins font-bold text-[27px]">
 					{data[language].contact[0]} ✌️
@@ -357,13 +319,19 @@ function App() {
 					{data[language].contact[1]}
 				</motion.p>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mr-auto gap-5 ml-auto w-fit mt-4 mb-20">
-					<Contact text="Discord" copyText="Atsukoro1#6323" icon={SiDiscord} />
+				<div className="grid grid-cols-2 md:grid-cols-3 mr-auto gap-5 ml-auto w-fit mt-4 mb-20">
+					<Contact 
+						text="Discord" 
+						copyText="Atsukoro1#6323" 
+						icon={SiDiscord} 
+					/>
+
 					<Contact
 						text="Email"
 						href="mailto:dornicakkuba@gmail.com"
 						icon={SiGmail}
 					/>
+
 					<Contact
 						text="Telegram"
 						copyText="Sonaj Solitarvan"
@@ -371,8 +339,6 @@ function App() {
 					/>
 				</div>
 			</div>
-
-			<ThreeDModel/>
 		</div>
 	);
 }

@@ -63,8 +63,7 @@ const data = [
 			`In my free time, I enjoy challenging myself by solving problems on Hackthebox to improve my cybersecurity skills. I also enjoy building applications with RUST, a programming language designed for safety and concurrency. Additionally, 
 			I like to play etterna, a rhythm game that requires quick reflexes and musical understanding. These activities not only allow me to have fun and relax, but also help me to continuously learn and improve my technical skills.`,
 			"What I do",
-		],
-		technology: ["Languages", "Databases", "Tools", "Frameworks"],
+		]
 	},
 	{
 		welcome: [
@@ -127,8 +126,7 @@ const data = [
 			V neposlední řadě mám zkušenosti se SolidJS, knihovnou JavaScriptu pro tvorbu webových aplikací ve stylu funkcionálního programování. Solid jsem použil k vytvoření škálovatelných a spolehlivých frontendových aplikací.`,
 			"Ve volném čase se rád věnuji řešení problémů na Hacktheboxu, abych zlepšil své dovednosti v oblasti kybernetické bezpečnosti. Baví mě také vytvářet aplikace pomocí programovacího jazyka RUST, který je navržen pro bezpečnost a souběžnost. Kromě toho rád hraji etternu, rytmickou hru, která vyžaduje rychlé reflexy a hudební porozumění. Tyto činnosti mi umožňují nejen se bavit a relaxovat, ale také mi pomáhají neustále se učit a zlepšovat své technické dovednosti.",
 			"Na čem pracuji",
-		],
-		technology: ["Jazyky", "Databáze", "Nástroje", "Frameworky"],
+		]
 	},
 ];
 
